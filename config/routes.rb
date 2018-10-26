@@ -11,7 +11,7 @@ authenticated :user do
 
   resources :haunts
   resources :users
-  resources :reviews
+  resources :comments
 
 
 end

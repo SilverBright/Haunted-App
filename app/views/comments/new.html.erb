@@ -1,0 +1,14 @@
+comments#new
+
+<%= @haunt.name %>
+<%= @haunt.description %>
+
+
+***COMMENTS***
+<ul>
+  <% @haunt.comments.each do |comment| %>
+    <li>
+      <%= comment.user.nil? ? "Anonymous" : comment.user.username %> says: <%= comment.content %>
+    </li>
+  <% end %>
+</ul>
