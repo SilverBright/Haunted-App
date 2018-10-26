@@ -18,8 +18,8 @@
 <br>
 
 
- <%= f.fields_for :reviews, @haunt.reviews.build do |r| %>
- <%= r.text_field :review %>
+ <%= f.fields_for :comments, @haunt.comments.build do |r| %>
+ <%= r.text_field :content %>
  
 <%= f.submit %>
   <% end %>
