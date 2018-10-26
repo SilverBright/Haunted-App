@@ -18,8 +18,8 @@
 <h2>Create a Review!</h2>
 
 <%= form_for(@review) do |f| %>
-<%= f.fields_for :haunts, @review.haunts.build do |reviews| %>
-    <%= reviewss.text_field :comment %>
+<%= f.fields_for :haunt, @review.haunts.build do |reviews| %>
+    <%= reviews.text_field :comment %>
      <% end %> <br>
 
   <%= f.submit %>

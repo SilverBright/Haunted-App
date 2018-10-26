@@ -26,7 +26,14 @@ class User < ApplicationRecord
 	has_many :haunts
 	has_many :reviews
 	has_many :haunts, through: :reviews
+	has_many :reviewed_haunts, :through => :reviews, :source => Haunt
 
 	# has_many :reviewed_haunts, through: :reviews, class_name: "Haunt"
+
+	# Warning: Ignoring invalid association :reviewed_haunts on User 
+	# (Could not find the source association(s) "reviewed_haunt" or 
+	# :reviewed_haunts in model Review. 
+	# Try 'has_many :reviewed_haunts, :through => :reviews, :source => <name>'. 
+	# Is it one of user or haunt?)
 
 end
