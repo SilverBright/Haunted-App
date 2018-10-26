@@ -24,9 +24,9 @@ class User < ApplicationRecord
 	end
 
 	has_many :haunts
-	has_many :reviews
-	has_many :haunts, through: :reviews
-	has_many :reviewed_haunts, :through => :reviews, :source => Haunt
+	has_many :comments
+	has_many :haunts, through: :comments
+	# has_many :reviewed_haunts, :through => :reviews, :source => Haunt
 
 	# has_many :reviewed_haunts, through: :reviews, class_name: "Haunt"
 

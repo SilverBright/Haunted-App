@@ -59,7 +59,7 @@ class HauntsController < ApplicationController
 	private
 
 	def haunt_params
-		params.require(:haunt).permit(:name, :location, :description, :reviews, :rating)
+		params.require(:haunt).permit(:name, :location, :description, reviews: [:review])
 	end
 
 

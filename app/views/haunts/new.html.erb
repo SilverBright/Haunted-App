@@ -16,5 +16,11 @@
 <%= f.label :description %>
 <%= f.text_field :description %>
 <br>
+
+
+ <%= f.fields_for :reviews, @haunt.reviews.build do |r| %>
+ <%= r.text_field :review %>
+ 
 <%= f.submit %>
-<% end %>
+  <% end %>
+  <% end %>
