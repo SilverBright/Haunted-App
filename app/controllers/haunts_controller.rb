@@ -6,6 +6,8 @@ class HauntsController < ApplicationController
 
 	def new
 		@haunt = current_user.haunts.build
+		@haunt.comments.build
+		# @comments = @haunt.comments.build
 		# @haunt = Haunt.new
 	end
 
@@ -15,6 +17,8 @@ class HauntsController < ApplicationController
 
 	def create
 		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
+
+		# @haunt.comments.create(params[:comment])
 		# @haunt = current_user.haunts.build(haunt_params)
 		# @haunt = Haunt.create(haunt_params)
 		if @haunt.save
@@ -59,7 +63,7 @@ class HauntsController < ApplicationController
 	private
 
 	def haunt_params
-		params.require(:haunt).permit(:name, :location, :description)
+		params.require(:haunt).permit(:name, :location, :description, :comments)
 	end
 
 

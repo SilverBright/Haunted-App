@@ -1,8 +1,17 @@
 class CommentsController < ApplicationController
 
+	def index
+		@comments = Comment.all
+	end
+
+	def new
+		@comment = Comment.new
+	end
+
+
 	def create
-    	comment = Comment.create(comment_params)
-    	redirect_to comment.haunt
+    	@comment = current_user.comments.create(comment_params)
+    	# redirect_to comment.haunt
   	end
 
 

@@ -24,13 +24,14 @@
         <td><%= haunt.name %></td> 
         <td><%= haunt.location %></td> 
         <td><%= haunt.description %></td> 
-        <td><%= haunt.user.content %></td> 
-        <td><%=  %></td> 
+  
     
         <td><%= link_to 'Add A Review', edit_haunt_path(haunt) %></td>
         <td><%= link_to 'Edit', edit_haunt_path(haunt) %></td>
         <td><%= link_to 'Destroy', haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
       </tr>
+
+      <% binding.pry %>
     <% end %>
 
 
