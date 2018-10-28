@@ -8,10 +8,10 @@ authenticated :user do
     root 'devise/sessions#new'
   end
 
-
-  resources :haunts
   resources :users
-  resources :comments
+  resources :haunts do 
+    resources :comments
+  end
 
 
 end

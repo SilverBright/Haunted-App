@@ -23,7 +23,7 @@ class User < ApplicationRecord
 		self.provider.present? && self.uid.present?
 	end
 
-	has_many :haunts
+	# has_many :haunts
 	has_many :comments
 	has_many :haunts, through: :comments
 	# has_many :reviewed_haunts, :through => :reviews, :source => Haunt

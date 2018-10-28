@@ -6,7 +6,7 @@ class HauntsController < ApplicationController
 
 	def new
 		@haunt = current_user.haunts.build
-		@haunt.comments.build
+		# @haunt.comments.build
 		# @comments = @haunt.comments.build
 		# @haunt = Haunt.new
 	end
@@ -22,7 +22,7 @@ class HauntsController < ApplicationController
 		# @haunt = current_user.haunts.build(haunt_params)
 		# @haunt = Haunt.create(haunt_params)
 		if @haunt.save
-			redirect_to haunts_path
+			redirect_to haunt_path(@haunt)
 		else 
 			render :new
 		end

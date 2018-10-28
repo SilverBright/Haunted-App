@@ -1,14 +1,45 @@
 comments#new
 
-<%= @haunt.name %>
+<%= haunt.name %>
 <%= @haunt.description %>
+
+
+<%= form_for(@comments) do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.label :rating %>
+  <%= f.integer :rating %>
+  <br>
+
+
+  <%= f.submit %>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ***COMMENTS***
 <ul>
-  <% @haunt.comments.each do |comment| %>
+  <%# @haunt.comments.each do |comment| %>
     <li>
-      <%= comment.user.nil? ? "Anonymous" : comment.user.username %> says: <%= comment.content %>
+      <%#= comment.user.nil? ? "Anonymous" : comment.user.username %> <%#= comment.content %>
     </li>
-  <% end %>
+  <%# end %>
 </ul>

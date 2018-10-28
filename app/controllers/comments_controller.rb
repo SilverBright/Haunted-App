@@ -5,12 +5,14 @@ class CommentsController < ApplicationController
 	end
 
 	def new
-		@comment = Comment.new
+		@comment = current_user.comments.build
+		# @comment = Comment.new
 	end
 
 
 	def create
-    	@comment = current_user.comments.create(comment_params)
+		@comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
+    	# @comment = comments.build(comment_params)
     	# redirect_to comment.haunt
   	end
 

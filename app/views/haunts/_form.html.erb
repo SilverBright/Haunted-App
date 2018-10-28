@@ -11,13 +11,14 @@ _form.html.erb
   <%= f.label :description %>
   <%= f.text_field :description %>
   <br>
-  <%#= f.fields_for :comments, @haunt.comments do |c| %>
+  <%#= f.label :Review %>
+  <%#= f.fields_for :comments, @haunt.comment do |c| %>
   <%#= c.text_field :content%>
-
+<%# end %>
   <%#= f.collection_check_boxes :haunt_ids, Haunt.all, :id, :name %>
   <%#= f.fields_for :comments, haunt.comments.build do |c| %>
   <%#= c.text_field :content %>
-  <% end %>
+
 
   <%= f.submit %>
 
