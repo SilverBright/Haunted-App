@@ -17,8 +17,6 @@ class HauntsController < ApplicationController
 
 	def create
 		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
-
-		# @haunt.comments.create(params[:comment])
 		# @haunt = current_user.haunts.build(haunt_params)
 		# @haunt = Haunt.create(haunt_params)
 		if @haunt.save

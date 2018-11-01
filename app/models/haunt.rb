@@ -4,6 +4,6 @@ class Haunt < ApplicationRecord
 	has_many :users, through: :comments
 
 	# accepts_nested_attributes_for :user, :comments
-	accepts_nested_attributes_for :user
-	accepts_nested_attributes_for :comments
+	# accepts_nested_attributes_for :user
+	# accepts_nested_attributes_for :comments
 end
