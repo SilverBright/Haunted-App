@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
 
 	def index
 		@comments = Comment.all
+		@haunt = Haunt.find(params[:haunt_id])
+		# @haunts = Haunt.all
 	end
 
 	def new
