@@ -30,6 +30,12 @@
       	
       	<td><strong><%= comment.user.email %> says:</strong></td>
       	<td>"<%= comment.content %>"</td> 
+
+ edit_haunt_comment GET      /haunts/:haunt_id/comments/:id/edit(.:format)   comments#edit
+   
+        <td><%= link_to 'Edit',  edit_haunt_comment_path(haunt, comment) %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+
     </tr>
       <% end %>
 	</tbody>
