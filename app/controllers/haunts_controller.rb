@@ -13,6 +13,7 @@ class HauntsController < ApplicationController
 
 	def show
 		@haunt = Haunt.find(params[:id])
+		@comment = Comment.find(params[:id])
 	end
 
 	def create
