@@ -4,15 +4,16 @@
 
 <h2>Welcome: <%= current_user.email %> </h2>
 
-<table>	
+<!-- <table>	
+  <thead>
     <tr>
-      <th>User Reviews for: <td><%= @haunt.name %></td></th>
-      <th>Location <td><%= @haunt.location %></td></th>
-      <th>Descrption <td><%= @haunt.description %></td></th>
+      <th>User Reviews for: <td><%#= @haunt.name %></td></th>
+      <th>Location <td><%#= @haunt.location %></td></th>
+      <th>Descrption <td><%#= @haunt.description %></td></th>
       <th colspan="10"></th>
     </tr>
-  </thead>
-</table>
+  </thead></table> 
+
 
 <br>
 <br>
@@ -20,40 +21,31 @@
 <table>
   <thead>
     <tr>
+      <th>Haunt</th>
       <th>User</th>
       <th>Review</th>
-      <th colspan="2"></th>
+      <th colspan="10"></th>
     </tr>
   </thead>
   
-   <tbody>
-    <% @haunt.comments.each do |comment| %>
+   <tbody> 
+    
+      
+
+
+      <%# @comments.each do |comment| %>
+    <%# comments.each do |comment| %>
    		<tr>
-      	<td><strong><%= comment.user.email %> says:</strong></td>
-      	<td>"<%= comment.content %>"</td> 
+      
+      	<td><%#= comment.user.email %> says:</td>
+      	<td>"<%#= comment.content %>"</td> 
         <%#= binding.pry %>
-        
+    
 
-
+      <%# end %>
 
     </tr>
-      <% end %>
-	</tbody>
-</table>
- 		
- 		
-
-</table>
       
-        <td><%#= link_to 'Add A Review', haunt_comment_path(@haunt)  %></td>
-        <td><%#= link_to 'Add A Review', new_haunt_comment_path(haunt) %></td>
-        <td><%#= link_to 'Edit', edit_haunt_path(haunt) %></td>
-        <td><%#= link_to 'Destroy', haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
-      </tr>
-
-  
-   
-
-
-    
-  </tbody>
+      
+	</tbody>
+</table>  

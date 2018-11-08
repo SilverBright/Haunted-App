@@ -2,18 +2,6 @@ require 'pry'
 
 class CommentsController < ApplicationController
 
-	def index
-		@comments = Comment.all
-		@haunt = Haunt.find(params[:haunt_id])
-		# @haunts = Haunt.all
-	end
-
-	def new
-		@haunt = Haunt.find(params[:haunt_id])
-		@comment = current_user.comments.build
-	end
-
-
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
@@ -27,9 +15,29 @@ class CommentsController < ApplicationController
     	end
   	end
 
+	def index
+		@haunts = Haunt.all
+		@comments = Comment.all
+		# @haunts = Haunt.all.includes(:comments)
+		# @haunt = Haunt.find(params[:haunt_id])
+		
+		# @comment = Comment.find(params[:id])
+	
+	end
+
+	def new
+		@haunt = Haunt.find(params[:haunt_id])
+		@comment = current_user.comments.build
+	end
+
+
+	
+
   	def show
   		@haunt = Haunt.find(params[:haunt_id])
   		@comment = Comment.find(params[:id])
+
+
   	end
 
   	def edit 

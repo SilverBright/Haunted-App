@@ -18,11 +18,22 @@
         <td><%= @haunt.name %></td> 
         <td><%= @haunt.location %></td> 
         <td><%= @haunt.description %></td> 
-        <td><%#= @haunt.user.comments %></td> 
+        <td><%#= @haunt.user.comments %></td>
+
+
 
         <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
   </tbody>
 </table>
 
 <br>
+
+<p>
+   Reviews:
+    <% @haunt.comments.each do |comment| %>
+    <%= link_to comment.user.email, user_path(comment.user) %> said
+    <%= comment.content %>
+  <% end %>
+
+</p>
 
