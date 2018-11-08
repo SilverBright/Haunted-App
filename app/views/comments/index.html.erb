@@ -27,16 +27,14 @@
   </thead>
   
    <tbody>
-    <% @comments.each do |comment| %>
+    <% @haunt.comments.each do |comment| %>
    		<tr>
-      	
       	<td><strong><%= comment.user.email %> says:</strong></td>
       	<td>"<%= comment.content %>"</td> 
         <%#= binding.pry %>
         
 
- <!-- edit_haunt_comment GET      /haunts/:haunt_id/comments/:id/edit(.:format)   comments#edit -->
-<!-- <td><%#= link_to 'Destroy', haunt_comment_path(@haunt, @comment), method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td> -->
+
 
     </tr>
       <% end %>
