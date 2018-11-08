@@ -6,16 +6,16 @@ class CommentsController < ApplicationController
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = current_user.comments.create(comment_params)
 		# @comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
-		if @comment.content.blank? 
-			flash[:error] = "Oops!  You didn't fill out your review."
-			redirect_to new_haunt_comment_path
-		else
-			@comment.save
+		# if @comment.content.blank? 
+			# flash[:error] = "Oops!  You didn't fill out your review."
+			# redirect_to new_haunt_comment_path
+		# else
+		
     	# comment = comments.build(comment_params)
     	# binding.pry
     	redirect_to haunt_comment_path(@haunt, @comment)
     	# redirect_to haunt_path(@haunt)
-    	end
+    	# end
   	end
 
 	def index
@@ -82,7 +82,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:content)
+		params.require(:comment).permit(:content, :haunt_id)
 		# params.require(:comment).permit(:content, :rating)
 
 	end
