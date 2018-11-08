@@ -1,0 +1,20 @@
+
+
+<h1>_form.html.erb</h1>
+
+<h2>  <%= @haunt.name %> </h2>
+<p> <%= @haunt.description %> </p> 
+
+
+
+<%= form_for [@haunt, @comment] do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <br>
+  <br>
+
+  <%= f.submit %>
+
+
+<% end %>

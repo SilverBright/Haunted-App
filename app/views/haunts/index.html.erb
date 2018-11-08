@@ -9,7 +9,7 @@
       <th>Title</th>
       <th>Location</th>
       <th>Description</th>
-      <th>Reviews</th>
+      <!-- <th>Reviews</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@
 
       <%#= binding.pry %>
       
-        <td><%#= link_to 'Add A Review', haunt_comment_path(@haunt)  %></td>
+        <td><%= link_to 'See Reviews', haunt_comments_path(haunt)  %></td>
         <td><%= link_to 'Add A Review', new_haunt_comment_path(haunt) %></td>
         <td><%= link_to 'Edit', edit_haunt_path(haunt) %></td>
         <td><%= link_to 'Destroy', haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>

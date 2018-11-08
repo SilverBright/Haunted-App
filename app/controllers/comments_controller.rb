@@ -35,32 +35,34 @@ class CommentsController < ApplicationController
   	def edit 
   		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		# if @comment && @comment.user.email == current_user
+		if @comment && @comment.user == current_user
 
-		# else
-    		# flash[:error] = "Foolish mortal. You can only edit your own entries!"
-    		# redirect_to comments_path
-    	# end
+		 else
+    		 flash[:error] = "Foolish mortal. You can only edit your own entries!"
+    		 redirect_to haunt_comment_path
+    	 end
 	end
 
 	def update
+		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		if @comment && @comment.user.email == current_user
+		if @comment && @comment.user == current_user
 		@comment.update(comment_params)
 		flash[:notice] = "Success!"
-		redirect_to comments_path
+		redirect_to haunt_comment_path
 		end
 	end
 
 	 def destroy
+	 	@haunt = Haunt.find(params[:haunt_id])
 	 	@comment = Comment.find(params[:id])
 	 	if @comment && @comment.user.email == current_user
     		@comment.destroy
-    		redirect_to comments_path
+    		# redirect_to comments_path
   
     	else
     		flash[:error] = "Foolish mortal. You can only delete your own entries!"
-    		redirect_to comments_path
+    		# redirect_to comments_path
   
     	end
   	end
