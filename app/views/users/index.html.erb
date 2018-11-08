@@ -1,1 +1,26 @@
 <h1>users#index</h1>
+
+All Reviews:
+
+<table>
+  <thead>
+    <tr>
+        <th>User</th>
+        <th>Haunt</th>
+        <th>Review</th>
+     <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <% @haunts.each do |haunt| %>
+        <% @comments.each do |comment| %>
+      <tr>
+      	<td><%= comment.user.email %></td> 
+        <td><%= haunt.name %></td> 
+        <td><%= comment.content %></td>
+        <% end %>
+
+   <% end %>
+  </tbody>
+</table>

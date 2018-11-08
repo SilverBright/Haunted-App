@@ -2,6 +2,9 @@ class HauntsController < ApplicationController
 
 	def index
 		@haunts = Haunt.all
+		@comments = Comment.all
+		# @haunt = Haunt.find(params[:id])
+		# @comment = Comment.find(params[:id])
 	end
 
 	def new
@@ -12,6 +15,8 @@ class HauntsController < ApplicationController
 	end
 
 	def show
+		@haunts = Haunt.all
+		@comments = Comment.all
 		@haunt = Haunt.find(params[:id])
 		@comment = Comment.find(params[:id])
 	end

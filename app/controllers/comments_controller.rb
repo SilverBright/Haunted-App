@@ -4,14 +4,17 @@ class CommentsController < ApplicationController
 
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
-		@comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
+		@comment = current_user.comments.create(comment_params)
+		# @comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
 		if @comment.content.blank? 
 			flash[:error] = "Oops!  You didn't fill out your review."
 			redirect_to new_haunt_comment_path
 		else
+			@comment.save
     	# comment = comments.build(comment_params)
     	# binding.pry
     	redirect_to haunt_comment_path(@haunt, @comment)
+    	# redirect_to haunt_path(@haunt)
     	end
   	end
 
@@ -34,6 +37,7 @@ class CommentsController < ApplicationController
 	
 
   	def show
+
   		@haunt = Haunt.find(params[:haunt_id])
   		@comment = Comment.find(params[:id])
 

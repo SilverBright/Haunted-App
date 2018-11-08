@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
 
-def show
-	@user = User.find(params[:id])
-	@comment = Comment.find(params[:id])
+	def index
+		@haunts = Haunt.all
+		@comments = Comment.all
+		
+	end
 
-end
+	def show
+		@user = User.find(params[:id])
+		@comment = Comment.find(params[:id])
+	end
 
 
 end
