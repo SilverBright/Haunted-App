@@ -4,12 +4,12 @@
 
 <h2>Welcome: <%= current_user.email %> </h2>
 
-<!-- <table>	
+<table>	
   <thead>
     <tr>
-      <th>User Reviews for: <td><%#= @haunt.name %></td></th>
-      <th>Location <td><%#= @haunt.location %></td></th>
-      <th>Descrption <td><%#= @haunt.description %></td></th>
+      <th>User Reviews for: <td><%= @haunt.name %></td></th>
+      <th>Location <td><%= @haunt.location %></td></th>
+      <th>Descrption <td><%= @haunt.description %></td></th>
       <th colspan="10"></th>
     </tr>
   </thead></table> 
@@ -21,7 +21,6 @@
 <table>
   <thead>
     <tr>
-      <th>Haunt</th>
       <th>User</th>
       <th>Review</th>
       <th colspan="10"></th>
@@ -33,16 +32,16 @@
       
 
 
-      <%# @comments.each do |comment| %>
-    <%# comments.each do |comment| %>
+      <% @haunt.comments.each do |comment| %>
+
    		<tr>
       
-      	<td><%#= comment.user.email %> says:</td>
-      	<td>"<%#= comment.content %>"</td> 
-        <%#= binding.pry %>
+      	<td><%= comment.user %> says: </td>
+      	<td>"<%= comment.content %>"</td> 
+        <%= binding.pry %>
     
 
-      <%# end %>
+      <% end %>
 
     </tr>
       

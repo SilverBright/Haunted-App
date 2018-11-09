@@ -16,10 +16,11 @@ class HauntsController < ApplicationController
 	end
 
 	def show
-		# @haunts = Haunt.all
-		# @comments = Comment.all
+		@haunts = Haunt.all
+		@comments = Comment.all
 		@haunt = Haunt.find(params[:id])
 		@comment = Comment.find(params[:id])
+
 	end
 
 	def create

@@ -20,11 +20,10 @@ class CommentsController < ApplicationController
   	end
 
 	def index
-		@haunts = Haunt.all
-		@comments = Comment.all
+		# @haunts = Haunt.all
+		# @comments = Comment.all
 		# @haunts = Haunt.all.includes(:comments)
-		# @haunt = Haunt.find(params[:haunt_id])
-		
+		@haunt = Haunt.find(params[:haunt_id])
 		# @comment = Comment.find(params[:id])
 	
 	end
