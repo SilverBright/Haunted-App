@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
 
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
-		@comment = @haunt.comments.create(comment_params)
-		# @comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
+		# @comment = @haunt.comments.create(comment_params)
+		@comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
 		# @comment = current_user.comments.create(comment_params)
 		# if @comment.content.blank? 
 			# flash[:error] = "Oops!  You didn't fill out your review."
@@ -50,12 +50,12 @@ class CommentsController < ApplicationController
   	def edit 
   		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		if @comment && @comment.user == current_user
+		# if @comment && @comment.user == current_user
 
-		 else
-    		 flash[:error] = "Foolish mortal. You can only edit your own entries!"
-    		 redirect_to haunt_comment_path
-    	 end
+		 # else
+    		 # flash[:error] = "Foolish mortal. You can only edit your own entries!"
+    		 # redirect_to haunt_comment_path
+    	 # end
 	end
 
 	def update
