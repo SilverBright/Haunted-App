@@ -8,22 +8,23 @@ class HauntsController < ApplicationController
 	end
 
 	def new
-		@haunt = current_user.haunts.build
-		# @haunt.comments.build
-		@comments = @haunt.comments.build
 		# @haunt = Haunt.new
+		@haunt = current_user.haunts.build
+		@comments = @haunt.comments.build
+		
+		
 	end
 
 	def show
-		@haunts = Haunt.all
-		@comments = Comment.all
+		# @haunts = Haunt.all
+		# @comments = Comment.all
 		@haunt = Haunt.find(params[:id])
 		@comment = Comment.find(params[:id])
 	end
 
 	def create
 		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
-
+		@comments = @haunt.comments.build
 		# @haunt = current_user.haunts.build(haunt_params)
 		# @haunt = Haunt.create(haunt_params)
 		if @haunt.save
@@ -68,7 +69,7 @@ class HauntsController < ApplicationController
 	private
 
 	def haunt_params
-		params.require(:haunt).permit(:name, :location, :description, :comments)
+		params.require(:haunt).permit(:name, :location, :description, comments: [:content])
 	end
 
 

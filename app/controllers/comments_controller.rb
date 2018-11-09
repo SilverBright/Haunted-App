@@ -4,8 +4,9 @@ class CommentsController < ApplicationController
 
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
+		@comment = @haunt.comments.create(comment_params)
+		# @comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
 		# @comment = current_user.comments.create(comment_params)
-		@comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
 		# if @comment.content.blank? 
 			# flash[:error] = "Oops!  You didn't fill out your review."
 			# redirect_to new_haunt_comment_path
@@ -13,8 +14,8 @@ class CommentsController < ApplicationController
 		
     	# comment = comments.build(comment_params)
     	# binding.pry
-    	# redirect_to haunt_path(@haunt, @comment)
-    	redirect_to haunt_path(@haunt)
+    	redirect_to haunt_comment_path(@haunt, @comment)
+    	# redirect_to haunt_path(@haunt)
     	# end
   	end
 
@@ -30,7 +31,9 @@ class CommentsController < ApplicationController
 
 	def new
 		@haunt = Haunt.find(params[:haunt_id])
-		@comment = current_user.comments.build
+		@comment = @haunt.comments.build
+		# @comment = current_user.comments.build
+
 	end
 
 
@@ -82,7 +85,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:content, :haunts)
+		params.require(:comment).permit(:content)
 		# params.require(:comment).permit(:content, :rating)
 
 	end

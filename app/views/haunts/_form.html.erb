@@ -1,4 +1,4 @@
-_form.html.erb
+<h1>Haunts#_form.html.erb</h1>
 
 <%= form_for(@haunt) do |f| %>
 
@@ -11,16 +11,7 @@ _form.html.erb
   <%= f.label :description %>
   <%= f.text_field :description %>
   <br>
-  <%#= f.label :Review %>
-  <%#= f.fields_for :comments, @haunt.comment do |c| %>
-  <%#= c.text_field :content%>
-<%# end %>
-  <%#= f.collection_check_boxes :haunt_ids, Haunt.all, :id, :name %>
-  <%#= f.fields_for :comments, haunt.comments.build do |c| %>
-  <%#= c.text_field :content %>
-
 
   <%= f.submit %>
-
 
 <% end %>
