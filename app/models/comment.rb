@@ -6,6 +6,4 @@ class Comment < ApplicationRecord
 	accepts_nested_attributes_for :user, reject_if: :all_blank
 	accepts_nested_attributes_for :haunt
 
-	# belongs_to :haunt, class_name: "Haunt", foreign_key: "haunt_id"
-
 end

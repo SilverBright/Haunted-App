@@ -23,17 +23,7 @@ class User < ApplicationRecord
 		self.provider.present? && self.uid.present?
 	end
 
-	# has_many :haunts
 	has_many :comments
 	has_many :haunts, through: :comments
-	# has_many :reviewed_haunts, :through => :reviews, :source => Haunt
-
-	# has_many :reviewed_haunts, through: :reviews, class_name: "Haunt"
-
-	# Warning: Ignoring invalid association :reviewed_haunts on User 
-	# (Could not find the source association(s) "reviewed_haunt" or 
-	# :reviewed_haunts in model Review. 
-	# Try 'has_many :reviewed_haunts, :through => :reviews, :source => <name>'. 
-	# Is it one of user or haunt?)
 
 end
