@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
 		# @comments = Comment.all
 		# @haunts = Haunt.all.includes(:comments)
 		@haunt = Haunt.find(params[:haunt_id])
+		# @comments = current_user.comments
 		# @comment = Comment.find(params[:id])
 	
 	end
@@ -84,7 +85,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:content)
+		params.require(:comment).permit(:content, :haunt)
 		# params.require(:comment).permit(:content, :rating)
 
 	end

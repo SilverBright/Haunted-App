@@ -35,10 +35,10 @@
       <% @haunt.comments.each do |comment| %>
 
    		<tr>
-      
-      	<td><%= comment.user %> says: </td>
-      	<td>"<%= comment.content %>"</td> 
-        <%= binding.pry %>
+        
+        <td>"<%#= comment.user.email %>"</td> 
+      	<td>"<%#= comment.content %>"</td> 
+        <%#= binding.pry %>
     
 
       <% end %>
