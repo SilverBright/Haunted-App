@@ -4,10 +4,11 @@ class CommentsController < ApplicationController
 
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
+		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
 
-		########### DEVISE: MERGE USER_ID WITH CURRENT_USER.ID ###########
-		@comment = current_user.comments.create(comment_params.merge(user_id: current_user.id))
+		# binding.pry
 
+		# @haunt.comments.create
 		# @comment = @haunt.comments.create(comment_params)
 		# @comment = current_user.comments.create(comment_params)
 		# if @comment.content.blank? 
@@ -17,7 +18,7 @@ class CommentsController < ApplicationController
     		# comment = comments.build(comment_params)
     		# binding.pry
 
-    	########### TYLER'S SOLUTION: ###########
+    	########### TYLER'S 'SHOW HAUNT AND COMMENT PATH' SOLUTION: ###########
     	redirect_to haunt_comment_path(@haunt, @comment)
 
     		# redirect_to haunt_path(@haunt)
@@ -26,16 +27,18 @@ class CommentsController < ApplicationController
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
+		# @comment = Comment.find(params[:id])
 		# @haunts = Haunt.all
 		# @comments = Comment.all
 		# @haunts = Haunt.all.includes(:comments)	
 		# @comments = current_user.comments
-		# @comment = Comment.find(params[:id])
 	end
 
 	def new
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = @haunt.comments.build
+		# @comment.save
+		# @comment = @haunt.comments.build(comment_params)
 		# @comment = current_user.comments.build
 	end
 

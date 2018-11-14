@@ -52,7 +52,7 @@ class HauntsController < ApplicationController
 		end
 	end
 
-	 def destroy
+	def destroy
 	 	@haunt = Haunt.find(params[:id])
 	 	if @haunt && @haunt.user == current_user
     		@haunt.destroy
@@ -68,6 +68,7 @@ class HauntsController < ApplicationController
 
 	def haunt_params
 		params.require(:haunt).permit(:name, :location, :description, comments: [:content])
+		# params.require(:haunt).permit(:name, :location, :description)
 	end
 
 end

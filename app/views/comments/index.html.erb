@@ -14,7 +14,6 @@
     </tr>
   </thead></table> 
 
-
 <br>
 <br>
 
@@ -29,22 +28,16 @@
   
    <tbody> 
     
-      
-
-
       <% @haunt.comments.each do |comment| %>
 
+      <%#= binding.pry %>
+
    		<tr>
-        
-        <td>"<%#= comment.user.email %>"</td> 
-      	<td>"<%#= comment.content %>"</td> 
-        <%#= binding.pry %>
-    
-
-      <% end %>
-
-    </tr>
+        <td><i>comment.user.email </i> <%#= comment.user.email %></td>
+      	<td> says: "<%= comment.content %>"</td> 
       
-      
+    <% end %>
+
+      </tr>
 	</tbody>
 </table>  
