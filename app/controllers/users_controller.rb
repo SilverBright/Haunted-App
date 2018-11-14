@@ -11,5 +11,4 @@ class UsersController < ApplicationController
 		@haunt = Haunt.find(params[:id])
 	end
 
-
 end
