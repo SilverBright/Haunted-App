@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     		# comment = comments.build(comment_params)
     		# binding.pry
 
-    	########### TYLER'S 'SHOW HAUNT AND COMMENT PATH' SOLUTION: ###########
+    	########### TYLER'S 'SHOW HAUNT WITH COMMENT PATH' SOLUTION: ###########
     	redirect_to haunt_comment_path(@haunt, @comment)
 
     		# redirect_to haunt_path(@haunt)
@@ -27,19 +27,11 @@ class CommentsController < ApplicationController
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
-		# @comment = Comment.find(params[:id])
-		# @haunts = Haunt.all
-		# @comments = Comment.all
-		# @haunts = Haunt.all.includes(:comments)	
-		# @comments = current_user.comments
 	end
 
 	def new
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = @haunt.comments.build
-		# @comment.save
-		# @comment = @haunt.comments.build(comment_params)
-		# @comment = current_user.comments.build
 	end
 
   	def show
