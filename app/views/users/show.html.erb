@@ -1,9 +1,0 @@
-<h1>users#show</h1>
-
- 
-<h2><%= @user.email %> </h2> has commented on the following posts:
- 
-<% @user.haunts.each do |haunt| %>
-  <%= link_to haunt.name, haunt_path(haunt) %>
-<% end %>
-
