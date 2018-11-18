@@ -1,41 +1,42 @@
+require 'pry'
+
 class HauntsController < ApplicationController
 
 	def index
 		@haunts = Haunt.all
-		@comments = Comment.all
+		# @comments = Comment.all
 	end
 
 	def new
 		@haunt = current_user.haunts.build
-		@comments = @haunt.comments.build
+		# @comments = @haunt.comments.build
 	end
 
 	def show
 		@haunt = Haunt.find(params[:id])
-		@comment = Comment.find(params[:id])
+		# @comment = Comment.find(params[:id])
 	end
 
 	def create
-		@haunt = Haunt.create(haunt_params)
-		@comments = @haunt.comments.build
-		# @haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
+		# @haunt = Haunt.create(haunt_params)
+		# @comments = @haunt.comments.build
+		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
 		if !@haunt.valid?
-			flash[:notice] = "Haunt name is already taken."
+			flash[:notice] = "Haunt name cannot be a duplicate & fields cannot be blank."
 			render :new
 		else 
-			flash[:error] = "Success!!"
+			flash[:notice] = "Success!!"
 			redirect_to haunt_path(@haunt)
 		end
 	end
 
 	def edit 
-		@haunt = Haunt.find(params[:id])
 		if @haunt && @haunt.user == current_user
-
+			@haunt = Haunt.find(params[:id])
 		else
-    		flash[:error] = "Foolish mortal. You can only edit your own entries!"
+    		flash[:notice] = "Foolish mortal. You can only edit your own entries!"
     		redirect_to haunts_path
-    	end
+    	 end
 	end
 
 	def update
@@ -45,6 +46,10 @@ class HauntsController < ApplicationController
 
 		flash[:notice] = "Success!"
 		redirect_to haunts_path
+
+		else
+			flash[:notice] = "Foolish mortal. You can only edit your own entries!"
+			redirect_to haunts_path
 		end
 	end
 
@@ -54,7 +59,7 @@ class HauntsController < ApplicationController
     		@haunt.destroy
     		redirect_to haunts_path
     	else
-    		flash[:error] = "Foolish mortal. You can only delete your own entries!"
+    		flash[:notice] = "Foolish mortal. You can only delete your own entries!"
     		redirect_to haunts_path
     	end
   	end

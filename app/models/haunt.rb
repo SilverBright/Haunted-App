@@ -4,6 +4,8 @@ class Haunt < ApplicationRecord
 	has_many :users, through: :comments
 
 	validates :name, uniqueness: true
+	validates :location, presence: true, on: :create
+	validates :description, presence: true, on: :create
 
 	accepts_nested_attributes_for :comments
 end
