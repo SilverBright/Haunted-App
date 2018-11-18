@@ -1,6 +1,13 @@
 <h1>Haunts#_form.html.erb</h1>
 
 <%= form_for(@haunt) do |f| %>
+<% if @haunt.errors.any? %>
+    <% @haunt.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+
+<%#= form_for(@haunt) do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
