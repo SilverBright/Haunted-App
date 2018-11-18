@@ -31,12 +31,15 @@ class HauntsController < ApplicationController
 	end
 
 	def edit 
-		if @haunt && @haunt.user == current_user
-			@haunt = Haunt.find(params[:id])
-		else
-    		flash[:notice] = "Foolish mortal. You can only edit your own entries!"
-    		redirect_to haunts_path
-    	 end
+		@haunt = Haunt.find(params[:id])
+		 if @haunt.user.email == current_user.email
+			
+	
+
+		 else
+    		 flash[:notice] = "Foolish mortal. You can only edit your own entries!"
+    		 redirect_to haunts_path
+    	  end
 	end
 
 	def update
@@ -68,7 +71,7 @@ class HauntsController < ApplicationController
 	private
 
 	def haunt_params
-		params.require(:haunt).permit(:name, :location, :description, comments: [:content])
+		params.require(:haunt).permit(:name, :location, :description)
 	end
 
 end

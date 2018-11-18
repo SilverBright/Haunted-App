@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
+  		# @comment = Comment.find(params[:id])
 	end
 
 	def new
