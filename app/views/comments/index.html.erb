@@ -7,37 +7,62 @@
 <table>	
   <thead>
     <tr>
-      <th>User Reviews for: <td><%= @haunt.name %></td></th>
-      <th>Location <td><%= @haunt.location %></td></th>
-      <th>Descrption <td><%= @haunt.description %></td></th>
-      <th colspan="10"></th>
-    </tr>
-  </thead></table> 
-
-<br>
-<br>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Review</th>
-      <th colspan="10"></th>
+      <th>User Reviews for:</th>
+      <th>Location</th>
+      <th>Descrption</th>
     </tr>
   </thead>
-  
-   <tbody> 
-    
-      <% @haunt.comments.each do |comment| %>
+    <tbody> 
+      <tr>
+      <td><%= @haunt.name %></td>
+      <td><%= @haunt.location %></td>
+      <td><%= @haunt.description %></td>
+   </table> 
+   </tr>
+<br>
+<br>
 
-      <%#= binding.pry %>
 
-   		<tr>
-        <td><i>comment.user.email </i> <%#= comment.user.email %></td>
-      	<td> says: "<%= comment.content %>"</td> 
-      
-    <% end %>
 
-      </tr>
-	</tbody>
+
+
+
+<table>
+    <tr>
+        <th>User</th>  
+        <th>Review</th>    
+    </tr>
 </table>  
+
+
+
+    
+      <% @haunt.users.each do |user| %> 
+      
+       <p>  <%= user.email %> says:</p>
+
+
+<% end %>
+
+
+
+  <% @haunt.comments.each do |comment| %>
+
+    <p><%= comment.content %> </p>
+
+  <% end %>
+
+
+
+
+
+
+
+
+    
+      
+      	
+   
+   
+    
+

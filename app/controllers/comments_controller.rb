@@ -4,29 +4,27 @@ class CommentsController < ApplicationController
 
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
+
+		########### MOHAMMAD'S COMMENT.CONTENT SOLUTION: ###########
 		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
 
-		# binding.pry
+		# binding.pry 
 
-		# @haunt.comments.create
-		# @comment = @haunt.comments.create(comment_params)
-		# @comment = current_user.comments.create(comment_params)
-		# if @comment.content.blank? 
-			# flash[:error] = "Oops!  You didn't fill out your review."
-			# redirect_to new_haunt_comment_path
-		# else
-    		# comment = comments.build(comment_params)
-    		# binding.pry
-
+		 if @comment.content.blank? 
+			 flash[:error] = "Oops!  You didn't fill out your review."
+			 redirect_to new_haunt_comment_path
+		 else
+    
     	########### TYLER'S 'SHOW HAUNT WITH COMMENT PATH' SOLUTION: ###########
     	redirect_to haunt_comment_path(@haunt, @comment)
 
-    		# redirect_to haunt_path(@haunt)
-    	# end
+    	end
   	end
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
+		
+		# binding.pry 
 	end
 
 	def new
@@ -42,12 +40,12 @@ class CommentsController < ApplicationController
   	def edit 
   		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		# if @comment && @comment.user == current_user
+		if @comment && @comment.user == current_user
 
-		# else
-    		# flash[:error] = "Foolish mortal. You can only edit your own entries!"
-    		# redirect_to haunt_comment_path
-    	 # end
+		else
+			flash[:error] = "Foolish mortal. You can only edit your own entries!"
+			redirect_to haunt_comment_path
+		end
 	end
 
 	def update

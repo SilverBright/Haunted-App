@@ -9,6 +9,7 @@ authenticated :user do
   end
 
   resources :users
+
   resources :haunts do 
     resources :comments
   end
