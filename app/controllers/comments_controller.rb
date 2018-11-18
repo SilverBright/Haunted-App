@@ -5,10 +5,8 @@ class CommentsController < ApplicationController
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
 
-		########### MOHAMMAD'S COMMENT.CONTENT SOLUTION: ###########
+		########### MOHAMMAD'S COMMENT.CONTENT & USER.EMAIL SOLUTION: ###########
 		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
-
-		# binding.pry 
 
 		 if @comment.content.blank? 
 			 flash[:error] = "Oops!  You didn't fill out your review."
@@ -17,14 +15,11 @@ class CommentsController < ApplicationController
     
     	########### TYLER'S 'SHOW HAUNT WITH COMMENT PATH' SOLUTION: ###########
     	redirect_to haunt_comment_path(@haunt, @comment)
-
     	end
   	end
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
-		
-		# binding.pry 
 	end
 
 	def new
@@ -77,7 +72,6 @@ class CommentsController < ApplicationController
 
 	def comment_params
 		params.require(:comment).permit(:content)
-		# params.require(:comment).permit(:content, :rating)
 	end
 
 end
