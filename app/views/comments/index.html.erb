@@ -22,42 +22,30 @@
 <br>
 <br>
 
-
-
-
-
-
 <table>
+  <thead>
     <tr>
-        <th>User</th>  
-        <th>Review</th>    
+        <th>Reviews</th>    
     </tr>
-</table>  
+  </thead>
 
-
-
+  <tbody> 
     
-      <% @haunt.users.each do |user| %> 
-      
-       <p>  <%= user.email  %> says:</p>
+      <% @haunt.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.user.email%> says: <%= comment.content %>  </td>
+        <% end %>
+      </table> 
+    </tr>
+  </tbody>
 
 
-<% end %>
+  <%# @haunt.users.each do |user| %> 
+        <p><%#= user.email  %> </p>
+      <%# end %>
 
 
-
-  <% @haunt.comments.each do |comment| %>
-
-    <p><%= comment.content %> </p>
-
-  <% end %>
-
-
-
-
-
-
-
+ 
 
     
       
