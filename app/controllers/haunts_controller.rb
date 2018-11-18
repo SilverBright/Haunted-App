@@ -19,10 +19,12 @@ class HauntsController < ApplicationController
 		@haunt = Haunt.create(haunt_params)
 		@comments = @haunt.comments.build
 		# @haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
-		if @haunt.save
-			redirect_to haunt_path(@haunt)
-		else 
+		if !@haunt.valid?
+			flash[:notice] = "Haunt name is already taken."
 			render :new
+		else 
+			flash[:error] = "Success!!"
+			redirect_to haunt_path(@haunt)
 		end
 	end
 
