@@ -1,25 +1,20 @@
-require 'pry'
-
 class HauntsController < ApplicationController
 
 	def index
 		@haunts = Haunt.all
-		# @comments = Comment.all
 	end
 
 	def new
 		@haunt = current_user.haunts.build
-		# @comments = @haunt.comments.build
 	end
 
 	def show
 		@haunt = Haunt.find(params[:id])
-		# @comment = Comment.find(params[:id])
 	end
 
 	def create
-		# @haunt = Haunt.create(haunt_params)
-		# @comments = @haunt.comments.build
+
+		####### DEVISE SOLUTION FOR USER #############
 		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
 		if !@haunt.valid?
 			flash[:notice] = "Haunt name cannot be a duplicate & fields cannot be blank."
@@ -34,22 +29,18 @@ class HauntsController < ApplicationController
 		@haunt = Haunt.find(params[:id])
 		 if @haunt.user == current_user
 			
-	
-
 		 else
-    		 flash[:notice] = "Foolish mortal. You can only edit your own entries!"
-    		 redirect_to haunts_path
-    	  end
+    		flash[:notice] = "Foolish mortal. You can only edit your own entries!"
+    		redirect_to haunts_path
+    	 end
 	end
 
 	def update
 		@haunt = Haunt.find(params[:id])
 		if @haunt && @haunt.user == current_user
 			@haunt.update(haunt_params)
-
-		flash[:notice] = "Success!"
-		redirect_to haunts_path
-
+			flash[:notice] = "Success!"
+			redirect_to haunts_path
 		else
 			flash[:notice] = "Foolish mortal. You can only edit your own entries!"
 			redirect_to haunts_path

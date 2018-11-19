@@ -1,5 +1,3 @@
-require 'pry'
-
 class CommentsController < ApplicationController
 
 	def create
@@ -20,11 +18,6 @@ class CommentsController < ApplicationController
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
-	
-
-
-  		# @comment = Comment.find(params[:id])
-  		# end
 	end
 
 	def new
@@ -65,7 +58,6 @@ class CommentsController < ApplicationController
 	 	if @comment && @comment.user == current_user
     		@comment.destroy
     		redirect_to haunt_comments_path
-  
     	else
     		flash[:error] = "Foolish mortal. You can only delete your own entries!"
     		redirect_to haunt_comment_path
