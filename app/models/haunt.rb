@@ -3,7 +3,7 @@ class Haunt < ApplicationRecord
 	has_many :comments
 	has_many :users, through: :comments
 
-	validates :name, uniqueness: true
+	validates :name, uniqueness: true, presence: true, on: :create
 	validates :location, presence: true, on: :create
 	validates :description, presence: true, on: :create
 

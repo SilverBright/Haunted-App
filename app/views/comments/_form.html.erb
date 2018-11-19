@@ -1,12 +1,12 @@
 <h1>Comments#_form.html.erb</h1>
 
 <h2>Haunt: <%= @haunt.name %></h2>
-<h3>Description: <%= @haunt.description %></h3>
+<p>Description: <%= @haunt.description %></p>
 
 <%= form_for [@haunt, @comment] do |f| %>
 
   <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.text_area :content %>
   <br>
   <br>
 

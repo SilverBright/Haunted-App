@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
 
 		 if @comment.content.blank? 
-			 flash[:error] = "Oops!  You didn't fill out your review."
+			 flash[:notice] = "Oops!  You didn't fill out your review."
 			 redirect_to new_haunt_comment_path
 		 else
     
