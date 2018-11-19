@@ -32,7 +32,7 @@ class HauntsController < ApplicationController
 
 	def edit 
 		@haunt = Haunt.find(params[:id])
-		 if @haunt.user.email == current_user.email
+		 if @haunt.user == current_user
 			
 	
 

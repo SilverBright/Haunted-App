@@ -7,6 +7,6 @@ class Haunt < ApplicationRecord
 	validates :location, presence: true, on: :create
 	validates :description, presence: true, on: :create
 
-	accepts_nested_attributes_for :users
+	
 	accepts_nested_attributes_for :comments
 end

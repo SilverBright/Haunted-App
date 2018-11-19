@@ -32,17 +32,17 @@
   <tbody> 
     
       <% @haunt.comments.each do |comment| %>
+          <% if !comment.content.blank? %>
+
       <tr>
-        <td><%= comment.user.email%> says: <%= comment.content %>  </td>
+        <td><%= comment.user.email %> says: <%= comment.content %>  </td>
+        <% end %>
         <% end %>
       </table> 
     </tr>
   </tbody>
 
 
-  <%# @haunt.users.each do |user| %> 
-        <p><%#= user.email  %> </p>
-      <%# end %>
 
 
  
