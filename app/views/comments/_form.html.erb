@@ -1,12 +1,14 @@
-<h1>Add A Review!</h1>
+<h2>Add A Review!</h2>
 
 <h2>Haunt: <%= @haunt.name %></h2>
-<p>Description: <%= @haunt.description %></p>
+<p>Description:</p> 
+<p><%= @haunt.description %></p>
 
 <%= form_for [@haunt, @comment] do |f| %>
 
-  <%= f.label :content %>
+  <%= f.label :Review %>:
   <%= f.text_area :content %>
+  
   <br>
   <br>
 
