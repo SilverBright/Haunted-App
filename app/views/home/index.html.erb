@@ -1,5 +1,7 @@
-<h1>Home#index</h1>
+<h2>Welcome, <%= current_user.email %></h2>
 
-<h1>Welcome: <%= current_user.email %></h1>
-
-<%#= link_to "Add A Haunt", new_haunt_path %>
+<ul>Would you like to...
+	<p></p>
+	<li><%= link_to "Add A Haunt", new_haunt_path %> </li>
+	<li><%= link_to "See All The Haunts", haunts_path %> </li>
+</ul>

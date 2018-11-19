@@ -1,8 +1,6 @@
-<%= require 'pry' %>
-
-<h1>comments#index</h1>
-
 <h2>Welcome: <%= current_user.email %> </h2>
+
+<h1>User Reviews</h1>
 
 <table>	
   <thead>
@@ -19,8 +17,9 @@
       <td><%= @haunt.description %></td>
    </table> 
    </tr>
-<br>
-<br>
+
+  <br>
+  <br>
 
 <table>
   <thead>
@@ -30,17 +29,15 @@
   </thead>
 
   <tbody> 
-    
       <% @haunt.comments.each do |comment| %>
           <% if !comment.content.blank? %>
-
       <tr>
         <td><%= comment.user.email %> says: <%= comment.content %>  </td>
         <% end %>
-        <% end %>
-      </table> 
+      <% end %> 
     </tr>
   </tbody>
+</table>
 
 
 

@@ -22,7 +22,7 @@ class HauntsController < ApplicationController
 		# @comments = @haunt.comments.build
 		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
 		if !@haunt.valid?
-			# flash[:notice] = "Haunt name cannot be a duplicate & fields cannot be blank."
+			flash[:notice] = "Haunt name cannot be a duplicate & fields cannot be blank."
 			render :new
 		else 
 			flash[:notice] = "Success!!"
