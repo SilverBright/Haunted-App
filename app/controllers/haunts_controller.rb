@@ -17,7 +17,6 @@ class HauntsController < ApplicationController
 		####### DEVISE SOLUTION FOR USER & CURRENT USER #############
 		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
 		if !@haunt.valid?
-			flash[:notice] = "Haunt name cannot be a duplicate & fields cannot be blank."
 			render :new
 		else 
 			flash[:notice] = "Success!!"
