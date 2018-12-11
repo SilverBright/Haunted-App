@@ -32,10 +32,10 @@
       <% @haunt.comments.each do |comment| %>
 
       <!-- Move this logic to the model -->
-          <% if !comment.content.blank? %>
+          <%# if !comment.content.blank? %>
       <tr>
         <td><%= comment.user.email %> says: <%= comment.content %>  </td>
-        <% end %>
+        <%# end %>
       <% end %> 
     </tr>
   </tbody>
