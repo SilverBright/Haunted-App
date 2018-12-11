@@ -16,6 +16,10 @@
         <td><%= @haunt.name %></td> 
         <td><%= @haunt.location %></td> 
         <td><%= @haunt.description %></td> 
+
+
+        <!-- Hide edit and destroy options from other users' comments -->
+        
         <td><%= link_to 'Edit Your Review', edit_haunt_comment_path  %></td>
         <td><%= link_to 'Destroy', haunt_comment_path(@haunt.id), method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
         <td><%= link_to 'See All Reviews', haunt_comments_path(@haunt.id)  %></td> 

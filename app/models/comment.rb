@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 	accepts_nested_attributes_for :user, reject_if: :all_blank
 	accepts_nested_attributes_for :haunt
 
+	# Move validations here
+
 end

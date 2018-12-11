@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 		# @comment.haunt = @haunt
 		# @comment.save  (returns a value of true if saved)
 
+		#Move this logic into the model?
 		 if @comment.content.blank? 
 			 flash[:notice] = "Oops!  You didn't fill out your review."
 			 redirect_to new_haunt_comment_path

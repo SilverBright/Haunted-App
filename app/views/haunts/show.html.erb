@@ -16,7 +16,8 @@
         <td><%= @haunt.name %></td> 
         <td><%= @haunt.location %></td> 
         <td><%= @haunt.description %></td>
-        <td><%=  %></td>
+      
+        <!-- Hide edit and destroy options from other users' comments -->
         
         <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
         <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>

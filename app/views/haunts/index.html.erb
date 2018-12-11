@@ -18,12 +18,21 @@
         <td><%= haunt.location %></td> 
         <td><%= haunt.description %></td> 
 
+        <!-- Hide edit and destroy options from other users' haunts -->
+
         <td><%= link_to 'See Reviews', haunt_comments_path(haunt)  %></td>
         <td><%= link_to 'Add A Review', new_haunt_comment_path(haunt) %></td>
+
+        <% if haunt && haunt.user == current_user %>
+
+        <%# binding.pry %>
+
         <td><%= link_to 'Edit', edit_haunt_path(haunt) %></td>
         <td><%= link_to 'Destroy', haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! MWAHAHAHA!' } %></td>
-      </tr>
+        <% end %>
 
+      </tr>
+     
     <% end %>
 
   </tbody>
