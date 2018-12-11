@@ -1,9 +1,9 @@
 Haunt.destroy_all
  
-Haunt.create!(name: "Haunted Mansion, Disneyland",
-              city: "Anaheim",
-              state: "CA",
-              description: "The Haunted Mansion is a dark ride attraction located at Disneyland Park (Disneyland Resort), Magic Kingdom, and Tokyo Disneyland. The attraction, although differing slightly in every location, places riders inside a haunted manor resided by '999 happy haunts'."
+Haunt.create!(name: "The Stanley Hotel",
+              city: "Estes Park",
+              state: "CO",
+              description: "One night in this hotel nestled in Colorado’s mountain wilderness inspired Stephen King’s best-selling novel turned horror film, The Shining. Massachusetts couple F.O. and Flora Stanley opened the isolated resort in 1909—and reportedly never left."
 )
 
 Haunt.create!(name: "Winchester Mystery House",

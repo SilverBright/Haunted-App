@@ -1,7 +1,10 @@
 <h3>Welcome: <%= current_user.email %> </h3>
 
 <h1>Haunt Directory</h1>
+
 <table>
+  <%= link_to 'See Haunts only in California', california_haunts_path %>
+  <br>
   <thead>
     <tr>
       <th>Title</th>
@@ -37,8 +40,10 @@
      
     <% end %>
 
-    <%= link_to 'Haunts in California', california_haunts_path %>
 
+  <br>
   </tbody>
 </table>
+
+
 
