@@ -4,7 +4,8 @@ class Haunt < ApplicationRecord
 	has_many :users, through: :comments
 
 	validates :name, uniqueness: true, presence: true
-	validates :location, presence: true
+	validates :city, presence: true
+	validates :state, presence: true
 	validates :description, presence: true
 
 	#May not need this line... only use for forms
