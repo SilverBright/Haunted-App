@@ -9,6 +9,9 @@ authenticated :user do
   end
 
   resources :haunts do 
+    collection do
+      get :california
+    end
     resources :comments
   end
 

@@ -1,7 +1,13 @@
 class HauntsController < ApplicationController
 
+
 	def index
 		@haunts = Haunt.all
+	end
+
+	def california
+		@haunts = Haunt.california
+		render :index
 	end
 
 	def new

@@ -11,5 +11,7 @@ class Haunt < ApplicationRecord
 	#May not need this line... only use for forms
 	accepts_nested_attributes_for :comments
 
-	# I need a scope method!!! By location?  Easy to implement. 
+	# I need a scope method!!! 
+	scope :california, -> { where(state: 'CA') }
+	# scope :red, -> { where(color: 'red') }
 end
