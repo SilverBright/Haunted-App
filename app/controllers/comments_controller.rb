@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 		# @comment.save  (returns a value of true if saved)
 
 		#Move this logic into the model?
-		 if @comment.content.blank? 
+		  if @comment.content.blank? 
 			 flash[:notice] = "Oops!  You didn't fill out your review."
 			 redirect_to new_haunt_comment_path
 		 else
@@ -48,11 +48,11 @@ class CommentsController < ApplicationController
 	def update
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		if @comment && @comment.user == current_user
-			@comment.update(comment_params)
+		if @comment && @comment.user == current_user 
+			@comment.update(comment_params) 
 
-			flash[:notice] = "Success!"
 			redirect_to haunt_comment_path
+
 		end
 	end
 

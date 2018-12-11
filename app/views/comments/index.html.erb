@@ -28,6 +28,8 @@
     </tr>
   </thead>
 
+  <%= link_to 'Add A Review', new_haunt_comment_path(@haunt) %>
+
   <tbody> 
       <% @haunt.comments.each do |comment| %>
 
