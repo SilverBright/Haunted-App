@@ -5,7 +5,8 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Location</th>
+      <th>City</th>
+      <th>State</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -15,7 +16,8 @@
     <% @haunts.each do |haunt| %>
       <tr>
         <td><%= haunt.name %></td> 
-        <td><%= haunt.location %></td> 
+        <td><%= haunt.city %></td> 
+        <td><%= haunt.state %></td> 
         <td><%= haunt.description %></td> 
 
         <!-- Hide edit and destroy options from other users' haunts -->
