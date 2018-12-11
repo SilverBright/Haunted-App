@@ -5,7 +5,7 @@ class Haunt < ApplicationRecord
 
 	validates :name, uniqueness: true, presence: true
 	validates :city, presence: true
-	validates :state, presence: true
+	validates :state, presence: true, length: { is: 2 }
 	validates :description, presence: true
 
 	#May not need this line... only use for forms

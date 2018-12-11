@@ -15,12 +15,13 @@ class HauntsController < ApplicationController
 	def create
 
 		####### DEVISE SOLUTION FOR USER & CURRENT USER #############
-		@haunt = current_user.haunts.create(haunt_params.merge(user_id: current_user.id))
+		@haunt = current_user.haunts.build(haunt_params.merge(user_id: current_user.id))
 
 		# Move this logic to the model?
 		if !@haunt.valid?
 			render :new
 		else 
+			@haunt.save
 			flash[:notice] = "Success!!"
 			redirect_to haunt_path(@haunt)
 		end
@@ -40,10 +41,10 @@ class HauntsController < ApplicationController
 		@haunt = Haunt.find(params[:id])
 		if @haunt && @haunt.user == current_user
 			@haunt.update(haunt_params)
-			flash[:notice] = "Success!"
+			# flash[:notice] = "Success!"
 			redirect_to haunts_path
 		else
-			flash[:notice] = "Foolish mortal. You can only edit your own entries!"
+			# flash[:notice] = "Foolish mortal. You can only edit your own entries!"
 			redirect_to haunts_path
 		end
 	end
