@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
 
 		########### MOHAMMAD'S COMMENT.CONTENT & USER.EMAIL SOLUTION: ###########
 		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
+		# @comment = current_user.comments.build(comment_params)
+		# @comment.haunt = @haunt
+		# @comment.save  (returns a value of true if saved)
 
 		 if @comment.content.blank? 
 			 flash[:notice] = "Oops!  You didn't fill out your review."
