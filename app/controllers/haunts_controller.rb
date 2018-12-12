@@ -23,8 +23,7 @@ class HauntsController < ApplicationController
 		####### DEVISE SOLUTION FOR USER & CURRENT USER #############
 		@haunt = current_user.haunts.build(haunt_params.merge(user_id: current_user.id))
 		if @haunt.save
-			json_response(@quote, :created)
-			# flash[:notice] = "Success!!"
+			flash[:notice] = "Success!!"
 			redirect_to haunt_path(@haunt)
 		else
 			render :new

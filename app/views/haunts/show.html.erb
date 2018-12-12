@@ -18,11 +18,16 @@
         <td><%= @haunt.city %></td> 
         <td><%= @haunt.state %></td> 
         <td><%= @haunt.description %></td> 
-      
-        <!-- Hide edit and destroy options from other users' comments -->
+
+        <!-- Hide edit and destroy options from other users' haunts -->
+
+        <% if @haunt && @haunt.user == current_user %>
 
         <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
         <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
         <td><%= link_to 'Destroy', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+
+        <% end %>
+
   </tbody>
 </table>
