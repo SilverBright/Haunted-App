@@ -9,7 +9,7 @@ class Haunt < ApplicationRecord
 	validates :description, presence: true
 
 	#May not need this line... only use for forms
-	accepts_nested_attributes_for :comments
+	# accepts_nested_attributes_for :comments
 
 	# I need a scope method!!! 
 	scope :california, -> { where(state: 'CA') }

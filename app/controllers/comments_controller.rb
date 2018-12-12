@@ -9,17 +9,27 @@ class CommentsController < ApplicationController
 		########### JENN'S SOLUTION: ###########
 		@comment = current_user.comments.build(comment_params)
 		@comment.haunt = @haunt
-		@comment.save  #(returns a value of true if saved)
+		# @comment.save 
+
+		# if @comment.valid?
+		if	@comment.save  #(returns a value of true if saved)
+			flash[:notice] = "Success!!"
+			redirect_to haunt_comment_path(@haunt, @comment)
+		else
+			# flash[:notice] = "Oops!  You didn't fill out your review."
+			# redirect_to new_haunt_comment_path
+			render :new
+		end
 
 		#Move this logic into the model?
-		  if @comment.content.blank? 
-			 flash[:notice] = "Oops!  You didn't fill out your review."
-			 redirect_to new_haunt_comment_path
-		 else
+		  # if @comment.content.blank? 
+			 # flash[:notice] = "Oops!  You didn't fill out your review."
+			 # redirect_to new_haunt_comment_path
+		 # else
     
     	########### TYLER'S 'SHOW HAUNT WITH COMMENT PATH' SOLUTION: ###########
-    	redirect_to haunt_comment_path(@haunt, @comment)
-    	end
+    	# redirect_to haunt_comment_path(@haunt, @comment)
+    	# end
   	end
 
 	def index

@@ -5,6 +5,12 @@
 <p><%= @haunt.description %></p>
 
 <%= form_for [@haunt, @comment] do |f| %>
+	<% if @comment.errors.any? %>
+    	<% @comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+  <br>
 
   <%= f.label :Review %>:
   <%= f.text_area :content %>

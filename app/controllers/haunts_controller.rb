@@ -22,15 +22,21 @@ class HauntsController < ApplicationController
 
 		####### DEVISE SOLUTION FOR USER & CURRENT USER #############
 		@haunt = current_user.haunts.build(haunt_params.merge(user_id: current_user.id))
-
-		# Move this logic to the model?
-		if !@haunt.valid?
-			render :new
-		else 
-			@haunt.save
+		# if @haunt.valid?
+		if @haunt.save
 			flash[:notice] = "Success!!"
 			redirect_to haunt_path(@haunt)
+		else
+			render :new
 		end
+		# Move this logic to the model?
+		# if !@haunt.valid?
+		# 	render :new
+		# else 
+		# 	@haunt.save
+		# 	flash[:notice] = "Success!!"
+		# 	redirect_to haunt_path(@haunt)
+		# end
 	end
 
 	def edit 
