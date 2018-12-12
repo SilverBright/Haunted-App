@@ -22,26 +22,17 @@ class HauntsController < ApplicationController
 
 		####### DEVISE SOLUTION FOR USER & CURRENT USER #############
 		@haunt = current_user.haunts.build(haunt_params.merge(user_id: current_user.id))
-		# if @haunt.valid?
 		if @haunt.save
 			flash[:notice] = "Success!!"
 			redirect_to haunt_path(@haunt)
 		else
 			render :new
 		end
-		# Move this logic to the model?
-		# if !@haunt.valid?
-		# 	render :new
-		# else 
-		# 	@haunt.save
-		# 	flash[:notice] = "Success!!"
-		# 	redirect_to haunt_path(@haunt)
-		# end
 	end
 
 	def edit 
 		@haunt = Haunt.find(params[:id])
-		 if @haunt.user == current_user
+		 if @haunt && @haunt.user == current_user
 			
 		 else
     		flash[:notice] = "Foolish mortal. You can only edit your own entries!"
@@ -51,12 +42,12 @@ class HauntsController < ApplicationController
 
 	def update
 		@haunt = Haunt.find(params[:id])
-		if @haunt && @haunt.user == current_user
+		 if @haunt && @haunt.user == current_user
 			@haunt.update(haunt_params)
 			flash[:notice] = "Success!"
 			redirect_to haunts_path
 		else
-			# flash[:notice] = "Foolish mortal. You can only edit your own entries!"
+			flash[:notice] = "Foolish mortal. You can only edit your own entries!"
 			redirect_to haunts_path
 		end
 	end
@@ -65,6 +56,7 @@ class HauntsController < ApplicationController
 	 	@haunt = Haunt.find(params[:id])
 	 	if @haunt && @haunt.user == current_user
     		@haunt.destroy
+    		flash[:notice] = "Success!"
     		redirect_to haunts_path
     	else
     		flash[:notice] = "Foolish mortal. You can only delete your own entries!"

@@ -5,31 +5,20 @@ class CommentsController < ApplicationController
 
 		########### MOHAMMAD'S COMMENT.CONTENT & USER.EMAIL SOLUTION: ###########
 		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
-		# @comment = current_user.comments.build(content: comment_params["content"], haunt_id: @haunt.id)
-		# @comment.save
-		
-		########### JENN'S VERSION TO MOHAMMAD'S SOLUTION: ###########
+
+		########### JENN'S ALTERNATE TO MOHAMMAD'S SOLUTION: ###########
 		# @comment = current_user.comments.build(comment_params)
 		# @comment.haunt = @haunt
+		# @comment.save #(returns a value of true if saved)
 
-		if	@comment.save  #(returns a value of true if saved)
+		if	@comment.save  
 			flash[:notice] = "Success!!"
+
+			########### TYLER'S 'SHOW HAUNT & COMMENT' SOLUTION: ###########
 			redirect_to haunt_comment_path(@haunt, @comment)
 		else
-			# flash[:notice] = "Oops!  You didn't fill out your review."
-			# redirect_to new_haunt_comment_path
 			render :new
 		end
-
-		#Move this logic into the model?
-		  # if @comment.content.blank? 
-			 # flash[:notice] = "Oops!  You didn't fill out your review."
-			 # redirect_to new_haunt_comment_path
-		 # else
-    
-    	########### TYLER'S 'SHOW HAUNT WITH COMMENT PATH' SOLUTION: ###########
-    	# redirect_to haunt_comment_path(@haunt, @comment)
-    	# end
   	end
 
 	def index
@@ -52,7 +41,7 @@ class CommentsController < ApplicationController
 		if @comment && @comment.user == current_user
 
 		else
-			flash[:error] = "Foolish mortal. You can only edit your own entries!"
+			flash[:notice] = "Foolish mortal. You can only edit your own entries!"
 			redirect_to haunt_comment_path
 		end
 	end
@@ -60,11 +49,10 @@ class CommentsController < ApplicationController
 	def update
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		if @comment && @comment.user == current_user 
+		 if @comment && @comment.user == current_user 
 			@comment.update(comment_params) 
-
+			flash[:notice] = "Success!"
 			redirect_to haunt_comment_path
-
 		end
 	end
 
@@ -73,9 +61,10 @@ class CommentsController < ApplicationController
 	 	@comment = Comment.find(params[:id])
 	 	if @comment && @comment.user == current_user
     		@comment.destroy
+    		flash[:notice] = "Success!"
     		redirect_to haunt_comments_path
     	else
-    		flash[:error] = "Foolish mortal. You can only delete your own entries!"
+    		flash[:notice] = "Foolish mortal. You can only delete your own entries!"
     		redirect_to haunt_comment_path
     	end
   	end
