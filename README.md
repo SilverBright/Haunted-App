@@ -5,18 +5,21 @@ Welcome to Haunted. This application is designed to allow users to collect their
 ## USAGE
 
 Clone or download this repository and run 'bundle install'. 
-Run rake db:migrate to create database tables and seed data.
+Run rake db:migrate to create database tables.
+Run rake db:migrate to see data for haunted locations, if desired, but not necessary.
 Run rails s to preview the application in your web browser: http://localhost:3000/
 
-You may use your Facebook account to login via OAuth, or you are welcome to sign up by using your email address to create a new account, along with a password.
+You may use your Facebook account to login via OAuth, or you are welcome to sign up by using your email address to create a new account.
 
-After login, users can browse and add haunted locations, along with a review.
+After account creation and login, users can browse and add haunted locations, along with a review.
 
 Enjoy!
 
 ## Instructional Video
 
-Coming soon...
+This video will be updated upon project completion. 
+
+https://www.youtube.com/watch?v=D7PMoSx1fCU&t=17s&ab_channel=BarbaraWashington
 
 ## Contributing
 
