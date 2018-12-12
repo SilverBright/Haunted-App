@@ -53,7 +53,7 @@ class HauntsController < ApplicationController
 		@haunt = Haunt.find(params[:id])
 		if @haunt && @haunt.user == current_user
 			@haunt.update(haunt_params)
-			# flash[:notice] = "Success!"
+			flash[:notice] = "Success!"
 			redirect_to haunts_path
 		else
 			# flash[:notice] = "Foolish mortal. You can only edit your own entries!"
