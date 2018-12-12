@@ -4,14 +4,14 @@ class CommentsController < ApplicationController
 		@haunt = Haunt.find(params[:haunt_id])
 
 		########### MOHAMMAD'S COMMENT.CONTENT & USER.EMAIL SOLUTION: ###########
-		# @comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
+		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
+		# @comment = current_user.comments.build(content: comment_params["content"], haunt_id: @haunt.id)
+		# @comment.save
 		
-		########### JENN'S SOLUTION: ###########
-		@comment = current_user.comments.build(comment_params)
-		@comment.haunt = @haunt
-		# @comment.save 
+		########### JENN'S VERSION TO MOHAMMAD'S SOLUTION: ###########
+		# @comment = current_user.comments.build(comment_params)
+		# @comment.haunt = @haunt
 
-		# if @comment.valid?
 		if	@comment.save  #(returns a value of true if saved)
 			flash[:notice] = "Success!!"
 			redirect_to haunt_comment_path(@haunt, @comment)
