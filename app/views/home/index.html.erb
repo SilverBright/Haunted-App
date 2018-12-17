@@ -5,3 +5,21 @@
 	<li><%= link_to "Add A Haunt", new_haunt_path %> </li>
 	<li><%= link_to "See All The Haunts", haunts_path %> </li>
 </ul>
+
+<p> Here is a list of all the haunts you've commented on so far:</p>
+
+<table>
+	<thead>
+		<tr>
+	  		<th></th>
+		</tr>
+	</thead>
+
+	<body>
+      	<tr>	
+			<% current_user.haunts.uniq.each do |haunt| %>
+			<td><b><%= haunt.name %></b></td>
+    	</tr>
+		<% end %>
+   </tbody>
+</table>
