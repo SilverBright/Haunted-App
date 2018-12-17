@@ -8,5 +8,6 @@ class Haunt < ApplicationRecord
 	validates :state, presence: true, length: { is: 2 }
 	validates :description, presence: true
 
-	scope :california, -> { where(state: 'CA') }
+	scope :california, -> { where(state: 'CA') }  #can make more flexible by state
+
 end

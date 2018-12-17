@@ -23,9 +23,9 @@
 
         <% if @haunt && @haunt.user == current_user %>
 
-        <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
-        <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
-        <td><%= link_to 'Destroy', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+          <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
+          <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
+          <td><%= link_to 'Destroy', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
 
         <% end %>
 
