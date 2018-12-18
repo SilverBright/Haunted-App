@@ -8,7 +8,7 @@ authenticated :user do
     root 'devise/sessions#new'
   end
 
-  resources :home, only: [:show]
+  resources :home, only: [:index]
 
   resources :haunts do 
     collection do
