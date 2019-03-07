@@ -1,6 +1,6 @@
 # HAUNTED
 
-Welcome to Haunted. This application is designed to allow users to collect their favorite haunted locations, and share their reviews with other users. 
+Welcome to FavoriteHaunts. This application is designed to allow users to collect their favorite haunted locations, and share their reviews with other users. 
 
 ## USAGE
 

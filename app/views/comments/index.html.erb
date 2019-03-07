@@ -33,7 +33,7 @@
   <tbody> 
       <% @haunt.comments.each do |comment| %>
         <tr>
-          <td><%= comment.user.email %> says: <%= comment.content %>  </td>
+          <td><strong><%= comment.user.email %></strong> says: <i><%= comment.content %></i>  </td>
         <% end %> 
       </tr>
   </tbody>
