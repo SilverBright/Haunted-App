@@ -6,19 +6,17 @@
 	<li><%= link_to "See All The Haunts", haunts_path %> </li>
 </ul>
 
-<p> Here is a list of all the haunts you've commented on so far:</p>
-
 <table>
 	<thead>
 		<tr>
-	  		<th></th>
+	  		<th>Here is a list of all the haunts you've commented on so far:</th>
 		</tr>
 	</thead>
 
 	<body>
       	<tr>	
 			<% current_user.haunts.uniq.each do |haunt| %>
-			<td><b><%= haunt.name %></b></td>
+			<td><%= haunt.name %></td>
     	</tr>
 		<% end %>
    </tbody>

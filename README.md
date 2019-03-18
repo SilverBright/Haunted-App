@@ -1,25 +1,27 @@
-# HAUNTED
+# HAUNTED RAILS PROJECT
 
-Welcome to FavoriteHaunts. This application is designed to allow users to collect their favorite haunted locations, and share their reviews with other users. 
+Welcome to Haunted. This application is designed to allow users to add and review their favorite haunted locations with other users. 
 
 ## USAGE
 
+You must have Ruby and Rails installed on your system.
 Clone or download this repository and run 'bundle install'. 
-Run rake db:migrate to create database tables.
-Run rake db:seed to seed data for haunted locations, if desired, but not necessary.
-Run rails s to preview the application in your web browser: http://localhost:3000/
+Run rake <b>db:migrate</b> to create the database tables.
+Run rake <b>db:seed</b> to seed data for haunted locations.
+
+Run <b>rails s</b> to preview the application in your web browser: http://localhost:3000/
 
 You may use your Facebook account to login via OAuth, or you are welcome to sign up by using your email address to create a new account.
 
-After account creation and login, users can browse and add haunted locations, along with a review.
+Your email address will be your username.
+
+After account creation and login, users can add and read all haunted locations and reviews.
 
 Enjoy!
 
 ## Instructional Video
 
-This video will be updated upon project completion. 
-
-https://www.youtube.com/watch?v=D7PMoSx1fCU&t=17s&ab_channel=BarbaraWashington
+An updated instructional video will added at a later date. 
 
 ## Contributing
 
@@ -27,4 +29,4 @@ Bug reports and pull requests are welcome on GitHub. This project is intended to
 
 ## License
 
-The application is available as open source under the terms of the MIT License.# Favorite_Haunts
+The application is available as open source under the terms of the MIT License.
