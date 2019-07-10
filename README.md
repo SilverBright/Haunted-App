@@ -1,22 +1,24 @@
 # HAUNTED RAILS PROJECT
 
-Welcome to Haunted. This application is designed to allow users to add and review their favorite haunted locations with other users. 
+Welcome to Haunted. This application is designed to allow users to add and review their favorite haunted locations with other users.
 
 ## USAGE
 
 You must have Ruby and Rails installed on your system.
-Clone or download this repository and run 
+Clone or download this repository and run:
 
 ```
-'bundle install'
+bundle install
 ```
+Note: if you are prompted to, install Ruby version 2.6.0, then run bundle install.
+
 Next run
-``` 
+```
 rake db:migrate
-``` 
+```
 to create the database tables.
 
-Run 
+Run
 ```
 rake db:seed
 ```
@@ -38,7 +40,7 @@ Enjoy!
 
 ## Instructional Video
 
-An updated instructional video will be added at a later date. 
+An updated instructional video will be added at a later date.
 
 ## Contributing
 

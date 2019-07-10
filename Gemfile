@@ -44,8 +44,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'figaro'
-gem 'faker'
-gem 'rails-erd'
 gem 'pry'
 
 group :development, :test do
@@ -60,6 +58,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails-erd'
 end
 
 group :test do
