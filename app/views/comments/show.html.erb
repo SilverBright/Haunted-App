@@ -1,7 +1,6 @@
-<br>
-<br>
+<br style = “line-height:100px;”></br>
 
-<table class="table table-bordered table-hover" style="width: 90%; margin: auto" >
+<table class="table table-bordered" style="width: 90%; margin: auto" >
   <thead>
     <tr>
      	<th>Title</th>
@@ -10,28 +9,18 @@
     </tr>
   </thead>
 
-    <tbody>
-      <tr>
-        <td><%= @haunt.name %></td> 
-        <td><%= @haunt.description %></td> 
-
-        <!-- Hide edit and destroy options from other users' haunts -->
-
-        <% if @comment && @comment.user == current_user %>
-
-          <td><%= link_to 'Edit Your Review', edit_haunt_comment_path, :class => "btn btn-primary btn-sm"  %></td>
-          <td><%= link_to 'Destroy', haunt_comment_path(@haunt.id), :class => "btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
-        
-        <% end %>
-
-    </tbody>
+  <tbody>
+    <tr>
+      <td><%= @haunt.name %></td> 
+      <td><%= @haunt.description %></td> 
+    </tr>
+  </tbody>
 </table>
 
-<div class="container-fluid">
-  <br />
-  <%= link_to 'See All Reviews', haunt_comments_path(@haunt.id), :class => "btn btn-primary btn-sm"  %><br style = “line-height:100px;”></br>
-
-
-
-  <b><%= @comment.user.email %> says:</b>  "<%= @comment.content %>"
+<div class="container"><br />
+  <b><%= @comment.user.email %> says:</b>  "<%= @comment.content %>"<br />
+    <% if @comment && @comment.user == current_user %><br />
+    <td><%= link_to 'Edit Your Review', edit_haunt_comment_path, :class => "btn btn-primary btn-sm" %></td>
+    <td><%= link_to 'Delete Your Review', haunt_comment_path(@haunt.id), :class => "btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+  <% end %>
 </div>

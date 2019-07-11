@@ -1,7 +1,6 @@
-<div class="container-fluid">
-<h3>Welcome: <%= current_user.email %> </h3>
-
-<h1>User Reviews</h1>
+<div class="container">
+  <h3>Welcome: <%= current_user.email %> </h3>
+  <h1>User Reviews</h1>
 </div>
 
 <table class="table table-bordered" style="width: 90%; margin: auto" >
@@ -19,28 +18,27 @@
     </tr>
   </tbody>
 </table> 
-   
-  <br>
-  <br>
 
-  <table class="table table-bordered" style="width: 90%; margin: auto" >
+<br />
+
+<table class="table table-bordered" style="width: 90%; margin: auto" >
   <thead>
     <tr>
       <th>REVIEWS</th>    
     </tr>
   </thead>
 
-  <div class ="container-fluid">
+  <div class ="container">
     <%= link_to 'Add A Review', new_haunt_comment_path(@haunt), :class => "btn btn-primary btn-sm" %>
   </div>
+  
   <br />
 
   <tbody> 
-      <% @haunt.comments.each do |comment| %>
-        <tr>
-          <td><strong><%= comment.user.email %></strong> says: <i><%= comment.content %></i> </td>
-        <% end %> 
-      </tr>
-      
+    <% @haunt.comments.each do |comment| %>
+      <tr>
+      <td><strong><%= comment.user.email %></strong> says: <i><%= comment.content %></i> </td>
+    <% end %> 
+    </tr>  
   </tbody>
-
+</table>

@@ -1,27 +1,19 @@
-<div class="container-fluid">
-<h2>Add A Review!</h2>
-
 <div class="container">
-<h2>Haunt: <%= @haunt.name %></h2>
-<p>Description:</p> 
-<p><%= @haunt.description %></p>
-</div>
+  <h2>Add A Review!</h2>
 
-<div class="container">
-<%= form_for [@haunt, @comment] do |f| %>
-	<% if @comment.errors.any? %>
-    	<% @comment.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+  <h2>Haunt: <%= @haunt.name %></h2>
+    <p>Description:</p> 
+    <p><%= @haunt.description %></p>
+
+    <%= form_for [@haunt, @comment] do |f| %>
+	    <% if @comment.errors.any? %>
+    	  <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
     <% end %>
-  <% end %>
  
-  <br>
-
-  <%= f.label :Review %>:
-  <br />
-  <%= f.text_area :content, size: "75x3"  %><br />
-  
-  <%= f.submit "Submit", :class => "btn btn-success" %>
-
-<% end %>
+    <%= f.label :Review %>:<br /> 
+    <%= f.text_area :content, size: "75x3"  %><br />
+    <%= f.submit "Submit", :class => "btn btn-success" %>
+  <% end %>
 <div>
