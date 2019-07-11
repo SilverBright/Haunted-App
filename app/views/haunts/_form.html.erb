@@ -1,29 +1,26 @@
-<div class="container-fluid">
-<h2>Add A Haunt:</h2>
+<div class="container">
+  <h2>Add A Haunt:</h2>
 
-<%= form_for(@haunt) do |f| %>
-<% if @haunt.errors.any? %>
+  <%= form_for(@haunt) do |f| %>
+    <% if @haunt.errors.any? %>
     <% @haunt.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
-  <% end %>
-  <br>
-
+  <% end %><br />
+  
   <%= f.label :name %>
-  <%= f.text_field :name, :size=>"50" %>
-  <br>
+  <%= f.text_field :name, :size=>"50" %><br />
+  
   <%= f.label :city %>
-  <%= f.text_field :city, :size=>"50" %>
-  <br>
+  <%= f.text_field :city, :size=>"50" %><br />
+  
   <%= f.label :state %>
-  <%= f.text_field :state, :size=>"2" %>
-  <br style = “line-height:100px;”></br>
-
+  <%= f.text_field :state, :size=>"2" %><br style = “line-height:100px;”></br>
+  
   <%= f.label :description %><br />
-  <%= f.text_area :description, size: "75x3" %>
-  <br>
+  <%= f.text_area :description, size: "75x3" %><br />
 
   <%= f.submit "Submit", :class => "btn btn-success" %>
 
-<% end %>
+  <% end %>
 </div>

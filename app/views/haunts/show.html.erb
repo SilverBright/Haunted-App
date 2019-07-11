@@ -1,12 +1,8 @@
-<div class="container-fluid">
-<h2>Please review your Haunt for any changes.</h2>
+<div class="container">
+  <h2>Please review your Haunt for any changes.</h2>
 </div>
 
 <table class="table table-bordered table-hover" style="width: 90%; margin: auto" >
-  <br>
-  <br>
-
-
   <thead>
     <tr>
      	<th>Title</th>
@@ -18,19 +14,17 @@
   </thead>
 
   <tbody>
-      <tr>
-        <td><%= @haunt.name %></td> 
-        <td><%= @haunt.city %></td> 
-        <td><%= @haunt.state %></td> 
-        <td><%= @haunt.description %></td> 
+    <tr>
+      <td><%= @haunt.name %></td> 
+      <td><%= @haunt.city %></td> 
+      <td><%= @haunt.state %></td> 
+      <td><%= @haunt.description %></td> 
 
-        <!-- Hide edit and destroy options from other users' haunts -->
-
-        <% if @haunt && @haunt.user == current_user %>
-
-          <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
-          <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
-          <td><%= link_to 'Destroy', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
-        <% end %>
+      <% if @haunt && @haunt.user == current_user %>
+        <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
+        <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
+        <td><%= link_to 'Destroy', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+      <% end %>
+    </tr>
   </tbody>
 </table>
