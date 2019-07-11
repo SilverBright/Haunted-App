@@ -1,2 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// https://i.imgur.com/73rPgGq.png
+
+body {
+  background: url('forestbw.jpg') no-repeat;
+  background-color: black;
+  background-size: cover;}  /* For a full size background image */
