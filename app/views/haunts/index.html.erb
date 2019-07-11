@@ -1,8 +1,10 @@
+<div class="container-fluid">
 <h3>Welcome: <%= current_user.email %> </h3>
 
 <h1>Haunt Directory</h1>
+</div>
 
-<table class="table table-bordered table-hover" style="width: 90%; margin: auto" >
+<table class="table table-bordered" style="width: 90%; margin: auto" >
   <thead>
     <tr>
       <th scope="col">Title</th>
@@ -12,7 +14,6 @@
     </tr>
   </thead>
 
-  
   <tbody>
     <% @haunts.each do |haunt| %>
       <tr>
@@ -21,15 +22,15 @@
         <td><%= haunt.state %></td> 
         <td><%= haunt.description %></td> 
  
-        <td><%= link_to 'See Reviews', haunt_comments_path(haunt)  %></td>
-        <td><%= link_to 'Add A Review', new_haunt_comment_path(haunt) %></td>
+        <td><%= link_to 'See Reviews', haunt_comments_path(haunt), :class => "btn btn-primary btn-sm"  %></td>
+        <td><%= link_to 'Add A Review', new_haunt_comment_path(haunt), :class => "btn btn-primary btn-sm" %></td>
 
         <!-- Hide edit and destroy options from other users' haunts -->
 
         <% if haunt && haunt.user == current_user %>
 
-        <td><%= link_to 'Edit', edit_haunt_path(haunt) %></td>
-        <td><%= link_to 'Destroy', haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! MWAHAHAHA!' } %></td>
+        <td><%= link_to 'Edit', edit_haunt_path(haunt), :class => "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Destroy', haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! MWAHAHAHA!' }, :class => "btn btn-primary btn-sm" %></td>
 
         <% end %>
       </tr>

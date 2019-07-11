@@ -1,7 +1,7 @@
 <br>
 <br>
 
-<table>
+<table class="table table-bordered table-hover" style="width: 90%; margin: auto" >
   <thead>
     <tr>
      	<th>Title</th>
@@ -19,14 +19,19 @@
 
         <% if @comment && @comment.user == current_user %>
 
-          <td><%= link_to 'Edit Your Review', edit_haunt_comment_path  %></td>
-          <td><%= link_to 'Destroy', haunt_comment_path(@haunt.id), method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+          <td><%= link_to 'Edit Your Review', edit_haunt_comment_path, :class => "btn btn-primary btn-sm"  %></td>
+          <td><%= link_to 'Destroy', haunt_comment_path(@haunt.id), :class => "btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
         
         <% end %>
 
     </tbody>
 </table>
 
-<p><%= link_to 'See All Reviews', haunt_comments_path(@haunt.id)  %></p> 
+<div class="container-fluid">
+  <br />
+  <%= link_to 'See All Reviews', haunt_comments_path(@haunt.id), :class => "btn btn-primary btn-sm"  %><br style = “line-height:100px;”></br>
 
-<p><%= @comment.user.email %> says:  "<%= @comment.content %>" </p>
+
+
+  <b><%= @comment.user.email %> says:</b>  "<%= @comment.content %>"
+</div>
