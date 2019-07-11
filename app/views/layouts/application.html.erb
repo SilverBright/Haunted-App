@@ -9,7 +9,9 @@
 </head>
 
 <body>
-  
+
+  <!--Error Messaging-->
+
   <% if flash[:error].present? %>
     <p class='flash-error'><%= flash[:error] %></p>
   <% end %>
@@ -17,18 +19,20 @@
     <p class='flash-notice'><%= flash[:notice] %></p>
   <% end %>
 
-  <!--Devise Login Links-->
-<div class="container-fluid">
-  <% if user_signed_in? %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete  %> | 
-    <%= link_to "Add A Haunt", new_haunt_path %> |
-    <%= link_to "See All The Haunts", haunts_path %> |
-    <%= link_to 'See Haunts only in California', california_haunts_path %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path  %> |
-    <%= link_to "Login", new_user_session_path  %>
-  <% end %>
-</div>
+  <!--Links-->
+
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete  %> | 
+      <%= link_to "Add A Haunt", new_haunt_path %> |
+      <%= link_to "See All The Haunts", haunts_path %> |
+      <%= link_to 'See Haunts only in California', california_haunts_path %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path  %> |
+      <%= link_to "Login", new_user_session_path  %>
+    <% end %>
+  </div>
+
   <%= yield %>
   
 </body>
