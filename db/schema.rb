@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_10_18_205235) do
     t.string "city"
     t.string "state"
     t.string "description"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
