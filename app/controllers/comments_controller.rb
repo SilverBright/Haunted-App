@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 		else
 			render :new
 		end
-  	end
+  end
 
 	def index
 		@haunt = Haunt.find(params[:haunt_id])
@@ -21,13 +21,13 @@ class CommentsController < ApplicationController
 		@comment = @haunt.comments.build
 	end
 
-  	def show
-  		@haunt = Haunt.find(params[:haunt_id])
-  		@comment = Comment.find(params[:id])
-  	end
+	def show
+		@haunt = Haunt.find(params[:haunt_id])
+		@comment = Comment.find(params[:id])
+	end
 
-  	def edit 
-  		@haunt = Haunt.find(params[:haunt_id])
+  def edit 
+  	@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
 		if @comment && @comment.user == current_user
 
@@ -40,25 +40,25 @@ class CommentsController < ApplicationController
 	def update
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = Comment.find(params[:id])
-		 if @comment && @comment.user == current_user 
+		if @comment && @comment.user == current_user 
 			@comment.update(comment_params) 
 			flash[:notice] = "Success!"
 			redirect_to haunt_comment_path
 		end
 	end
 
-	 def destroy
-	 	@haunt = Haunt.find(params[:haunt_id])
+	def destroy
+		@haunt = Haunt.find(params[:haunt_id])
 	 	@comment = Comment.find(params[:id])
 	 	if @comment && @comment.user == current_user
-    		@comment.destroy
-    		flash[:notice] = "Success!"
-    		redirect_to haunt_comments_path
-    	else
-    		flash[:notice] = "Foolish mortal. You can only delete your own entries!"
-    		redirect_to haunt_comment_path
-    	end
-  	end
+    	@comment.destroy
+    	flash[:notice] = "Success!"
+    	redirect_to haunt_comments_path
+    else
+    	flash[:notice] = "Foolish mortal. You can only delete your own entries!"
+    	redirect_to haunt_comment_path
+    end
+  end
 
 
 	private

@@ -1,5 +1,4 @@
 class HauntsController < ApplicationController
-	# create before action method for flash messages
 	before_action :user_permissions, only: [:edit, :update, :destroy]
 
 	def index
@@ -21,7 +20,7 @@ class HauntsController < ApplicationController
 
 	def create
 
-		# DEVISE SOLUTION FOR USER & CURRENT USER
+		#### DEVISE CODE FOR USER & CURRENT USER ####
 		@haunt = current_user.haunts.build(haunt_params.merge(user_id: current_user.id))
 		if @haunt.save
 			flash[:notice] = "Success!!"
@@ -31,22 +30,18 @@ class HauntsController < ApplicationController
 		end
 	end
 
-	def edit 
-	end
-
 	def update
 		@haunt.update(haunt_params)
 		redirect_to haunts_path
 	end
 
 	def destroy
-    	@haunt.destroy 
-    	redirect_to haunts_path
-  	end
+  	@haunt.destroy 
+    redirect_to haunts_path
+  end
 
 
 	private
-
 
 	def user_permissions
 		@haunt = Haunt.find(params[:id])
