@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 	def create
 		@haunt = Haunt.find(params[:haunt_id])
 		@comment = current_user.comments.create(content: comment_params["content"], haunt_id: @haunt.id)
-		if	@comment.save  
+		if @comment.save  
 			flash[:notice] = "Success!!"
 
 			redirect_to haunt_comment_path(@haunt, @comment)
