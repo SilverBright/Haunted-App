@@ -4,13 +4,9 @@ Welcome to Haunted, an application where users can create, manage, and comment o
 
 Features:
 - create and login with a secure user account
-- or login using Facebook Oauth
-- create, read, update, delete haunted locations
-- create, read, update, delete comments on haunted locations
+- login using Facebook Oauth
 - your login email address (or facebook email address) will be your username
-- a user cannot update or delete other users' haunted locations or comments
-- a user cannot see or interact with the application when logged out
-- a user must be logged in to gain access to the app
+- Designed with MVC pattern, CRUD actions, and RESTful routes
 
 ## Installation
 
@@ -37,14 +33,13 @@ You will be redirected to the main Haunt index page where you will see a complet
 From here, you can add new haunted locations, or add comments to existing haunted location.
 You can update or delete your haunted locations and comments at any time.
 
-## Specs
+## Credits
 
-- built using [Ruby on Rails](https://rubyonrails.org/)
+- [Ruby on Rails](https://rubyonrails.org/)
 - [Devise](https://github.com/plataformatec/devise/blob/master/README.md) for user account authentication
 - [omniauth-facebook](https://github.com/mkdynamic/omniauth-facebook) for Facebook login authentication
 - [bootstrap-sass](https://github.com/twbs/bootstrap-sass) for minimal styling
-- Designed with MVC pattern, CRUD actions, and RESTful routes
-- Seeded data available for immediate use upon login
+
 
 ## Contributing
 
