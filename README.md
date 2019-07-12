@@ -39,12 +39,12 @@ You can update or delete your haunted locations and comments at any time.
 
 ## Specs
 
-- app build using Ruby on Rails
-- implemented [Devise](https://github.com/plataformatec/devise/blob/master/README.md) for user account authentication
-- Facebook Oauth for third party login 
+- built using [Ruby on Rails](https://rubyonrails.org/)
+- [Devise](https://github.com/plataformatec/devise/blob/master/README.md) for user account authentication
+- [omniauth-facebook](https://github.com/mkdynamic/omniauth-facebook) for Facebook login authentication
+- [bootstrap-sass](https://github.com/twbs/bootstrap-sass) for minimal styling
 - Designed with MVC pattern, CRUD actions, and RESTful routes
-- Bootstraped for minimal styling
-- Seeded data for immediate use
+- Seeded data available for immediate use upon login
 
 ## Contributing
 
@@ -52,4 +52,26 @@ Bug reports and pull requests are welcome on GitHub. This project is intended to
 
 ## License
 
-The application is available as open source under the terms of the MIT License.
+The application is available as open source under the terms of the [MIT License](https://github.com/SilverBright/Haunted-App/blob/add-license-1/LICENSE).
+
+MIT License
+
+Copyright (c) 2019 Babs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
