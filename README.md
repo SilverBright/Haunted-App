@@ -7,6 +7,8 @@ Features:
 - login using Facebook Oauth
 - your login email address (or facebook email address) will be your username
 - Designed with MVC pattern, CRUD actions, and RESTful routes
+- Minimal Bootstrap styling
+- Simple navbar for quick and easy navigation
 
 ## Installation
 
@@ -37,7 +39,7 @@ You can update or delete your haunted locations and comments at any time.
 
 - [Ruby on Rails](https://rubyonrails.org/)
 - [Devise](https://github.com/plataformatec/devise/blob/master/README.md) for user account authentication
-- [omniauth-facebook](https://github.com/mkdynamic/omniauth-facebook) for Facebook login authentication
+- [omniauth-facebook](https://github.com/mkdynamic/omniauth-facebook) for Facebook authentication
 - [bootstrap-sass](https://github.com/twbs/bootstrap-sass) for minimal styling
 
 
