@@ -1,46 +1,50 @@
-# HAUNTED RAILS PROJECT
+# HAUNTED
 
-Welcome to Haunted. This application is designed to allow users to add and review their favorite haunted locations with other users.
+Welcome to Haunted, an application where users can create, manage, and comment on their favorite haunted locations.
 
-## USAGE
+Features:
+- create and login with a secure user account
+- or login using Facebook Oauth
+- create, read, update, delete haunted locations
+- create, read, update, delete comments on haunted locations
+- your login email address (or facebook email address) will be your username
+- a user cannot update or delete other users' haunted locations or comments
+- a user cannot see or interact with the application when logged out
+- a user must be logged in to gain access to the app
 
-You must have Ruby and Rails installed on your system.
+## Installation
+
 Clone or download this repository and run:
 
 ```
 bundle install
-```
-Note: if you are prompted to, install Ruby version 2.6.0, then run bundle install.
-
-Next run
-```
 rake db:migrate
-```
-to create the database tables.
-
-Run
-```
 rake db:seed
 ```
-to seed data for haunted locations.
 
-Run
+To start the rails server, run:
 ```
 rails s
 ```
-to preview the application in your web browser: http://localhost:3000/
-
-You may use your Facebook account to login via OAuth, or you are welcome to sign up by using your email address to create a new account.
-
-Your email address will be your username.
-
-After account creation and login, users can add and read haunted locations and reviews.
+Go to http://localhost:3000/ to preview the application in your web browser.
 
 Enjoy!
 
-## Instructional Video
+## Instructions
 
-An updated instructional video will be added at a later date.
+Create a new account, or login using your Facebook account.  
+You will be redirected to the main Haunt index page where you will see a complete list of haunted locations.
+From here, you can add new haunted locations, or add comments to existing haunted location.
+You can update or delete your haunted locations and comments at any time.
+
+## Specs
+
+- app build using Ruby on Rails
+- implemented [Devise](https://github.com/plataformatec/devise/blob/master/README.md) for user account authentication
+- Facebook Oauth for third party login 
+- Designed with MVC pattern, CRUD actions, and RESTful routes
+- Bootstraped for minimal styling
+- Seeded data for immediate use
 
 ## Contributing
 
