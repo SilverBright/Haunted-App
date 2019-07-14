@@ -2,7 +2,7 @@
 
 Welcome to Haunted, an application where users can create, manage, and comment on their favorite haunted locations.
 
-Features:
+Specs:
 - create and login with a secure user account
 - login using Facebook Oauth
 - your login email address (or facebook email address) will be your username
