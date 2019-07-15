@@ -1,10 +1,12 @@
 # HAUNTED
 
-Welcome to Haunted, an application where users can create, manage, and comment on their favorite haunted locations.
+Welcome to Haunted, a Ruby on Rails application where users can create, manage, and comment on their favorite haunted locations.
+
+<img src="images/hauntedhome.png" width="30%"> <img src="images/hauntedcomment.png" width="30%"> <img src="images/hauntedreview.png" width="30%">
 
 Features:
 - create and login with a secure user account
-- login using Facebook Oauth
+- login using secure Facebook Oauth
 - your login email address (or facebook email address) will be your username
 - Designed with MVC pattern, CRUD actions, and RESTful routes
 - Minimal Bootstrap styling
