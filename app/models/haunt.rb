@@ -9,5 +9,4 @@ class Haunt < ApplicationRecord
 	validates :description, presence: true
 
 	scope :california, -> { where(state: 'CA') }
-
 end

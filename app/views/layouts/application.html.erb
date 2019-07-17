@@ -10,7 +10,7 @@
 
 <body>
 
-  <!--Error Messaging-->
+  <!--FLASH MESSAGING-->
 
   <% if flash[:error].present? %>
     <p class='flash-error'><%= flash[:error] %></p>
@@ -19,7 +19,7 @@
     <p class='flash-notice'><%= flash[:notice] %></p>
   <% end %>
 
-  <!--Links-->
+  <!--LINKS-->
 
   <div class="container">
     <% if user_signed_in? %>

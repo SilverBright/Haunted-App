@@ -10,7 +10,6 @@
       <th>Descrption</th>
     </tr>
   </thead>
-
   <tbody> 
     <tr>
       <td><%= @haunt.name %></td>
@@ -27,13 +26,10 @@
       <th>REVIEWS</th>    
     </tr>
   </thead>
-
   <div class ="container">
     <%= link_to 'Add A Review', new_haunt_comment_path(@haunt), :class => "btn btn-primary btn-sm" %>
   </div>
-  
   <br />
-
   <tbody> 
     <% @haunt.comments.each do |comment| %>
       <tr>
