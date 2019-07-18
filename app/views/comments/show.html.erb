@@ -21,5 +21,6 @@
     <% if @comment && @comment.user == current_user %><br />
     <td><%= link_to 'Edit Your Review', edit_haunt_comment_path, :class => "btn btn-primary btn-sm" %></td>
     <td><%= link_to 'Delete Your Review', haunt_comment_path(@haunt.id), :class => "btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
-  <% end %>
+    <td><%= link_to 'See All Reviews', haunt_comments_path(@haunt.id), :class => "btn btn-primary btn-sm" %></td>
+    <% end %>
 </div>

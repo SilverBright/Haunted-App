@@ -2,10 +2,10 @@
   <h2>Please review your Haunt for any changes.</h2>
 </div>
 
-<table class="table table-bordered table-hover" style="width: 90%; margin: auto" >
+<table class="table table-bordered" style="width: 90%; margin: auto" >
   <thead>
     <tr>
-     	<th>Title</th>
+     	<th>Location</th>
       <th>City</th>
       <th>State</th>
       <th>Description</th>
@@ -21,9 +21,8 @@
 
       <% if @haunt && @haunt.user == current_user %>
         <td><%= link_to 'Edit', edit_haunt_path(@haunt.id) %></td>
-        <td><%= link_to 'Add A Review', new_haunt_comment_path(@haunt.id)  %></td>
-        <td><%= link_to 'Destroy', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
-      <% end %>
+        <td><%= link_to 'Delete', @haunt, method: :delete, data: { confirm: 'Are you sure?! There is no going back! Mwah ha haaaaahhh' } %></td>
+        <% end %>
     </tr>
   </tbody>
 </table>
