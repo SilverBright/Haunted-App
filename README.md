@@ -1,6 +1,6 @@
 # HAUNTED
 
-Welcome to Haunted, a Ruby on Rails application where users can create, manage, and comment on their favorite haunted locations.
+Welcome to Haunted, a Ruby on Rails application where users can create and comment on their favorite haunted locations.
 
 <img src="images/hauntedhome.png" width="30%"> <img src="images/hauntedcomment.png" width="30%"> <img src="images/hauntedreview.png" width="30%">
 

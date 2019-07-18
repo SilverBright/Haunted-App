@@ -10,15 +10,6 @@
 
 <body>
 
-  <!--FLASH MESSAGING-->
-
-  <% if flash[:error].present? %>
-    <p class='flash-error'><%= flash[:error] %></p>
-  <% end %>
-  <% if flash[:notice].present? %>
-    <p class='flash-notice'><%= flash[:notice] %></p>
-  <% end %>
-
   <!--LINKS-->
 
   <div class="container">
@@ -30,6 +21,18 @@
     <% else %>
       <%= link_to "Sign up", new_user_registration_path  %> |
       <%= link_to "Login", new_user_session_path  %>
+    <% end %>
+  </div>
+  <br />
+
+  <!--FLASH MESSAGING-->
+
+  <div class="container">
+    <% if flash[:error].present? %>
+      <p class='flash-error'><%= flash[:error] %></p>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <p class='flash-notice'><%= flash[:notice] %></p>
     <% end %>
   </div>
 
